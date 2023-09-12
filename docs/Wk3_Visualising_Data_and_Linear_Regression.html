@@ -406,7 +406,267 @@ document.write(`
 <h1>Visualising Data and Linear Regression<a class="headerlink" href="#visualising-data-and-linear-regression" title="Permalink to this heading">#</a></h1>
 <p>As you progress through your degree program you will take part in lots of experiments and collect a vast amount of data. Typically data will initially be recorded in a well designed table and although having an initial record of our measured data is important (as we may need to refer back to it in the future), if I were to ask you to spot patterns in data from a table alone you may find this quite difficult.</p>
 <p>Take a look at the data below and try to quickly spot a pattern.</p>
-<p><img alt="image" src="_images/RandomDataTable.png" /></p>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="text-center head"><p>x Data</p></th>
+<th class="text-center head"><p>y1 Data</p></th>
+<th class="text-center head"><p>y2 Data</p></th>
+<th class="text-center head"><p>y3 Data</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-center"><p>0</p></td>
+<td class="text-center"><p>0</p></td>
+<td class="text-center"><p>0</p></td>
+<td class="text-center"><p>0</p></td>
+</tr>
+<tr class="row-odd"><td class="text-center"><p>1</p></td>
+<td class="text-center"><p>20.4</p></td>
+<td class="text-center"><p>0</p></td>
+<td class="text-center"><p>0.1</p></td>
+</tr>
+<tr class="row-even"><td class="text-center"><p>2</p></td>
+<td class="text-center"><p>40.8</p></td>
+<td class="text-center"><p>0</p></td>
+<td class="text-center"><p>0.6</p></td>
+</tr>
+<tr class="row-odd"><td class="text-center"><p>3</p></td>
+<td class="text-center"><p>61.2</p></td>
+<td class="text-center"><p>0.1</p></td>
+<td class="text-center"><p>1.6</p></td>
+</tr>
+<tr class="row-even"><td class="text-center"><p>4</p></td>
+<td class="text-center"><p>81.6</p></td>
+<td class="text-center"><p>0.2</p></td>
+<td class="text-center"><p>3.1</p></td>
+</tr>
+<tr class="row-odd"><td class="text-center"><p>5</p></td>
+<td class="text-center"><p>102</p></td>
+<td class="text-center"><p>0.4</p></td>
+<td class="text-center"><p>5.2</p></td>
+</tr>
+<tr class="row-even"><td class="text-center"><p>6</p></td>
+<td class="text-center"><p>122.4</p></td>
+<td class="text-center"><p>0.8</p></td>
+<td class="text-center"><p>7.9</p></td>
+</tr>
+<tr class="row-odd"><td class="text-center"><p>7</p></td>
+<td class="text-center"><p>142.9</p></td>
+<td class="text-center"><p>1.7</p></td>
+<td class="text-center"><p>11.2</p></td>
+</tr>
+<tr class="row-even"><td class="text-center"><p>8</p></td>
+<td class="text-center"><p>163.3</p></td>
+<td class="text-center"><p>3.4</p></td>
+<td class="text-center"><p>15.3</p></td>
+</tr>
+<tr class="row-odd"><td class="text-center"><p>9</p></td>
+<td class="text-center"><p>183.7</p></td>
+<td class="text-center"><p>6.7</p></td>
+<td class="text-center"><p>20.1</p></td>
+</tr>
+<tr class="row-even"><td class="text-center"><p>10</p></td>
+<td class="text-center"><p>204.1</p></td>
+<td class="text-center"><p>12.5</p></td>
+<td class="text-center"><p>25.6</p></td>
+</tr>
+<tr class="row-odd"><td class="text-center"><p>11</p></td>
+<td class="text-center"><p>224.5</p></td>
+<td class="text-center"><p>22.4</p></td>
+<td class="text-center"><p>31.9</p></td>
+</tr>
+<tr class="row-even"><td class="text-center"><p>12</p></td>
+<td class="text-center"><p>244.9</p></td>
+<td class="text-center"><p>38.5</p></td>
+<td class="text-center"><p>38.9</p></td>
+</tr>
+<tr class="row-odd"><td class="text-center"><p>13</p></td>
+<td class="text-center"><p>265.3</p></td>
+<td class="text-center"><p>63.5</p></td>
+<td class="text-center"><p>46.8</p></td>
+</tr>
+<tr class="row-even"><td class="text-center"><p>14</p></td>
+<td class="text-center"><p>285.7</p></td>
+<td class="text-center"><p>100.4</p></td>
+<td class="text-center"><p>55.6</p></td>
+</tr>
+<tr class="row-odd"><td class="text-center"><p>15</p></td>
+<td class="text-center"><p>306.1</p></td>
+<td class="text-center"><p>152.3</p></td>
+<td class="text-center"><p>65.1</p></td>
+</tr>
+<tr class="row-even"><td class="text-center"><p>16</p></td>
+<td class="text-center"><p>326.5</p></td>
+<td class="text-center"><p>221.5</p></td>
+<td class="text-center"><p>75.6</p></td>
+</tr>
+<tr class="row-odd"><td class="text-center"><p>17</p></td>
+<td class="text-center"><p>346.8</p></td>
+<td class="text-center"><p>209.1</p></td>
+<td class="text-center"><p>86.9</p></td>
+</tr>
+<tr class="row-even"><td class="text-center"><p>18</p></td>
+<td class="text-center"><p>367.3</p></td>
+<td class="text-center"><p>413.8</p></td>
+<td class="text-center"><p>99.2</p></td>
+</tr>
+<tr class="row-odd"><td class="text-center"><p>19</p></td>
+<td class="text-center"><p>387.8</p></td>
+<td class="text-center"><p>531.2</p></td>
+<td class="text-center"><p>112.3</p></td>
+</tr>
+<tr class="row-even"><td class="text-center"><p>20</p></td>
+<td class="text-center"><p>408.2</p></td>
+<td class="text-center"><p>654.2</p></td>
+<td class="text-center"><p>126.4</p></td>
+</tr>
+<tr class="row-odd"><td class="text-center"><p>21</p></td>
+<td class="text-center"><p>428.6</p></td>
+<td class="text-center"><p>772.8</p></td>
+<td class="text-center"><p>141.5</p></td>
+</tr>
+<tr class="row-even"><td class="text-center"><p>22</p></td>
+<td class="text-center"><p>449</p></td>
+<td class="text-center"><p>875.6</p></td>
+<td class="text-center"><p>157.5</p></td>
+</tr>
+<tr class="row-odd"><td class="text-center"><p>23</p></td>
+<td class="text-center"><p>469.4</p></td>
+<td class="text-center"><p>951.7</p></td>
+<td class="text-center"><p>174.5</p></td>
+</tr>
+<tr class="row-even"><td class="text-center"><p>24</p></td>
+<td class="text-center"><p>489.8</p></td>
+<td class="text-center"><p>992.2</p></td>
+<td class="text-center"><p>192.5</p></td>
+</tr>
+<tr class="row-odd"><td class="text-center"><p>25</p></td>
+<td class="text-center"><p>510.2</p></td>
+<td class="text-center"><p>992.2</p></td>
+<td class="text-center"><p>211.5</p></td>
+</tr>
+<tr class="row-even"><td class="text-center"><p>26</p></td>
+<td class="text-center"><p>530.6</p></td>
+<td class="text-center"><p>951.7</p></td>
+<td class="text-center"><p>231.5</p></td>
+</tr>
+<tr class="row-odd"><td class="text-center"><p>27</p></td>
+<td class="text-center"><p>551</p></td>
+<td class="text-center"><p>875.6</p></td>
+<td class="text-center"><p>252.5</p></td>
+</tr>
+<tr class="row-even"><td class="text-center"><p>28</p></td>
+<td class="text-center"><p>571.4</p></td>
+<td class="text-center"><p>772.8</p></td>
+<td class="text-center"><p>274.6</p></td>
+</tr>
+<tr class="row-odd"><td class="text-center"><p>29</p></td>
+<td class="text-center"><p>591.8</p></td>
+<td class="text-center"><p>654.2</p></td>
+<td class="text-center"><p>297.7</p></td>
+</tr>
+<tr class="row-even"><td class="text-center"><p>30</p></td>
+<td class="text-center"><p>612.2</p></td>
+<td class="text-center"><p>531.2</p></td>
+<td class="text-center"><p>321.9</p></td>
+</tr>
+<tr class="row-odd"><td class="text-center"><p>31</p></td>
+<td class="text-center"><p>632.7</p></td>
+<td class="text-center"><p>413.8</p></td>
+<td class="text-center"><p>347.2</p></td>
+</tr>
+<tr class="row-even"><td class="text-center"><p>32</p></td>
+<td class="text-center"><p>653.1</p></td>
+<td class="text-center"><p>309.1</p></td>
+<td class="text-center"><p>373.5</p></td>
+</tr>
+<tr class="row-odd"><td class="text-center"><p>33</p></td>
+<td class="text-center"><p>673.5</p></td>
+<td class="text-center"><p>221.5</p></td>
+<td class="text-center"><p>401</p></td>
+</tr>
+<tr class="row-even"><td class="text-center"><p>34</p></td>
+<td class="text-center"><p>693.9</p></td>
+<td class="text-center"><p>152.3</p></td>
+<td class="text-center"><p>429.6</p></td>
+</tr>
+<tr class="row-odd"><td class="text-center"><p>35</p></td>
+<td class="text-center"><p>714.3</p></td>
+<td class="text-center"><p>100.4</p></td>
+<td class="text-center"><p>459.2</p></td>
+</tr>
+<tr class="row-even"><td class="text-center"><p>36</p></td>
+<td class="text-center"><p>734.7</p></td>
+<td class="text-center"><p>63.5</p></td>
+<td class="text-center"><p>490.1</p></td>
+</tr>
+<tr class="row-odd"><td class="text-center"><p>37</p></td>
+<td class="text-center"><p>755.1</p></td>
+<td class="text-center"><p>38.5</p></td>
+<td class="text-center"><p>522</p></td>
+</tr>
+<tr class="row-even"><td class="text-center"><p>38</p></td>
+<td class="text-center"><p>775.5</p></td>
+<td class="text-center"><p>22.4</p></td>
+<td class="text-center"><p>551.1</p></td>
+</tr>
+<tr class="row-odd"><td class="text-center"><p>39</p></td>
+<td class="text-center"><p>795.9</p></td>
+<td class="text-center"><p>12.5</p></td>
+<td class="text-center"><p>589.4</p></td>
+</tr>
+<tr class="row-even"><td class="text-center"><p>40</p></td>
+<td class="text-center"><p>816.3</p></td>
+<td class="text-center"><p>6.7</p></td>
+<td class="text-center"><p>624.8</p></td>
+</tr>
+<tr class="row-odd"><td class="text-center"><p>41</p></td>
+<td class="text-center"><p>836.7</p></td>
+<td class="text-center"><p>3.4</p></td>
+<td class="text-center"><p>661.4</p></td>
+</tr>
+<tr class="row-even"><td class="text-center"><p>42</p></td>
+<td class="text-center"><p>857.1</p></td>
+<td class="text-center"><p>1.7</p></td>
+<td class="text-center"><p>699.1</p></td>
+</tr>
+<tr class="row-odd"><td class="text-center"><p>43</p></td>
+<td class="text-center"><p>877.6</p></td>
+<td class="text-center"><p>0.8</p></td>
+<td class="text-center"><p>738.1</p></td>
+</tr>
+<tr class="row-even"><td class="text-center"><p>44</p></td>
+<td class="text-center"><p>898</p></td>
+<td class="text-center"><p>0.4</p></td>
+<td class="text-center"><p>778.3</p></td>
+</tr>
+<tr class="row-odd"><td class="text-center"><p>45</p></td>
+<td class="text-center"><p>918.4</p></td>
+<td class="text-center"><p>0.2</p></td>
+<td class="text-center"><p>819.6</p></td>
+</tr>
+<tr class="row-even"><td class="text-center"><p>46</p></td>
+<td class="text-center"><p>938.8</p></td>
+<td class="text-center"><p>0.1</p></td>
+<td class="text-center"><p>862.2</p></td>
+</tr>
+<tr class="row-odd"><td class="text-center"><p>47</p></td>
+<td class="text-center"><p>959.2</p></td>
+<td class="text-center"><p>0</p></td>
+<td class="text-center"><p>906.1</p></td>
+</tr>
+<tr class="row-even"><td class="text-center"><p>48</p></td>
+<td class="text-center"><p>979.6</p></td>
+<td class="text-center"><p>0</p></td>
+<td class="text-center"><p>951.1</p></td>
+</tr>
+<tr class="row-odd"><td class="text-center"><p>49</p></td>
+<td class="text-center"><p>1000</p></td>
+<td class="text-center"><p>0</p></td>
+<td class="text-center"><p>997.4</p></td>
+</tr>
+</tbody>
+</table>
 <p>Did you manage to spot the trends? Did it take less than a second or so? Probably not.</p>
 <p>Now let’s take a look at this data plotted using Python…</p>
 <p><img alt="image" src="_images/RandomData.png" /></p>
@@ -469,7 +729,7 @@ document.write(`
 </div>
 </div>
 <p>Note that when “unpack = True” there are four variables on the left hand side of the equal sign. This is because we are telling numpy to create an 1D array for each column of our csv file. Alternatively, we can set “unpack = False” which means that we can load the information from our csv file as a single array which we can then slice later. If needed, we could also directly enter our data into the Python script as a numpy array or list.</p>
-<p>The “delimiter = ‘,’” argument simply tells numpy that when it is reading our csv file, the numbers are separated by commas. If we used a different file type (such as .txt) we may want to set that equal to something else.</p>
+<p>The “delimiter = ‘,’ ” argument simply tells numpy that when it is reading our csv file that the numbers are separated by commas. If we used a different file type (such as .txt) we may want to set that equal to something else.</p>
 <p>We have also included the argument “skiprows = 1”, which tells numpy to ignore the first line of our csv file as this is just the column headings and not the data. We could omit this argument if we did not include the headings in our file.</p>
 <p>Now that we have successfully imported our data we can begin making a fitting script. To do this we are going to use plt.errorbar() (plots x-y data with error bars) and plt.plot() (plots x-y data without error bars). The information required to determine the gradient and intercept of your line of best fit via a manual regression can be found at the end of this document.</p>
 <div class="cell docutils container">
@@ -608,7 +868,7 @@ document.write(`
 <hr class="docutils" />
 <div class="section" id="simple-linear-regression-suplimentary">
 <h2>Simple Linear Regression (Suplimentary)<a class="headerlink" href="#simple-linear-regression-suplimentary" title="Permalink to this heading">#</a></h2>
-<p>During your career as a physicist, you will routinely fit models to experimental data in order to extract information from it. In this section we will discuss the different types of fitting routines commonly employed and when it is most appropriate to use each type. We will focus on three main fitting routines: simple linear regression, weighted least squares, and orthogonal distance regression (ODR).</p>
+<p>During your career as a physicist, you will routinely fit models to experimental data in order to extract information from it. In this section we will discuss the different types of fitting routines commonly employed and when it is most appropriate to use each type. We will focus on a key fitting routine - <strong>simple linear regression</strong>.</p>
 <div class="section" id="part-1-simple-linear-regression">
 <h3>Part 1: Simple Linear Regression<a class="headerlink" href="#part-1-simple-linear-regression" title="Permalink to this heading">#</a></h3>
 <p>A simple linear regression is a special case of least squares fitting (often referred to as “ordinary least squares”) and is the routine employed when the model we are fitting to our data is linear i.e. fitting a line of best fit. When using a simple linear regression, we make the assumption that the data has no associated error or that the errors are equal for each data point (this is often referred to as homoscedasticity).</p>
@@ -636,92 +896,40 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/5d96a2014497fc8cc8be72946ecef8321ee061d26fea7ceb72de9f41df9ba7ba.png" src="_images/5d96a2014497fc8cc8be72946ecef8321ee061d26fea7ceb72de9f41df9ba7ba.png" />
+<img alt="_images/5133b4349886944a8cc53d0430c80d14c6fd2a799e811283bac07b37fe22b4f9.png" src="_images/5133b4349886944a8cc53d0430c80d14c6fd2a799e811283bac07b37fe22b4f9.png" />
 </div>
 </div>
-<p>If we then use the linear regression tool from scipy.states, we would obtain the following fit:</p>
+<p>If we then use the linear regression tool from scipy.stats (we will learn to use this next week!), we would obtain the following plot which has included a line of best fit determined using simple linear regression:</p>
+<div class="cell tag_remove-input docutils container">
+<div class="cell_output docutils container">
+<img alt="_images/1808188527846777424609c1a03d7fe644e6de23955e76a84547a50ff4b88008.png" src="_images/1808188527846777424609c1a03d7fe644e6de23955e76a84547a50ff4b88008.png" />
+</div>
+</div>
 </div>
 <div class="section" id="part-2-what-is-the-linregress-function-actually-doing">
 <h3>Part 2: What is the linregress function actually doing?<a class="headerlink" href="#part-2-what-is-the-linregress-function-actually-doing" title="Permalink to this heading">#</a></h3>
 <p>We now have a line of best fit determined computationally, but what were the calculations performed by the scipy.stats.linregress function when doing so? Lets first consider the model that we are aiming to fit, a straight line given by:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-0bc1115a-d5d7-4b40-ac6d-a8d7244ed4ee">
-<span class="eqno">(1)<a class="headerlink" href="#equation-0bc1115a-d5d7-4b40-ac6d-a8d7244ed4ee" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-7466a729-f11d-42aa-97c3-2fc003e243b5">
+<span class="eqno">(1)<a class="headerlink" href="#equation-7466a729-f11d-42aa-97c3-2fc003e243b5" title="Permalink to this equation">#</a></span>\[\begin{equation}
     y = mx+c, 
 \end{equation}\]</div>
 <p>where <span class="math notranslate nohighlight">\(x\)</span> represents an independent variable, <span class="math notranslate nohighlight">\(y\)</span> represents a dependant variable, and <span class="math notranslate nohighlight">\(m\)</span> and <span class="math notranslate nohighlight">\(c\)</span> represent the gradient and intercept of the line of best fit, respectively. In this example, we know what the values of <span class="math notranslate nohighlight">\(x\)</span> and <span class="math notranslate nohighlight">\(y\)</span> are and we are trying to determine appropriate values for <span class="math notranslate nohighlight">\(m\)</span> and <span class="math notranslate nohighlight">\(c\)</span>.</p>
 <p>With reference to the annotated plot below, we can see that for a given line of best fit, there is a vertical separation between each data point and the line. The discrepancies between the model line of best fit and data points are called the residuals. The least-squares fitting routine minimises the square of the residuals. We use the sum of the square rather than just the sum as some points lie below the line of best fit and others lie above, therefore if we were to just use the sum these values would cancel out and give a value close to zero.</p>
 <p><img alt="image" src="_images/SLR_plot_annotated.png" /></p>
 <p>The calculations to determine the value of gradient and intercept by minimising the sum of the squared residual values using the simple linear regression model are as follows:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-05d99b8d-85f1-41b6-a7db-626a25a99c4b">
-<span class="eqno">(2)<a class="headerlink" href="#equation-05d99b8d-85f1-41b6-a7db-626a25a99c4b" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-086c43a3-1a82-4066-8317-c176c8af80e1">
+<span class="eqno">(2)<a class="headerlink" href="#equation-086c43a3-1a82-4066-8317-c176c8af80e1" title="Permalink to this equation">#</a></span>\[\begin{equation}
     m = \frac{N\sum{x \cdot y} + \sum{x} \cdot\sum{y}}{N\sum{\left(x^2\right)} - \sum{\left(x\right)}^2},
 \end{equation}\]</div>
 <p>where <span class="math notranslate nohighlight">\(N\)</span> is the number of data points, and:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-e235d8f1-6eff-47f5-be57-dcdd8933fa2f">
-<span class="eqno">(3)<a class="headerlink" href="#equation-e235d8f1-6eff-47f5-be57-dcdd8933fa2f" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-ed9f9c4a-0285-4c0f-a3d1-615e9fa1f714">
+<span class="eqno">(3)<a class="headerlink" href="#equation-ed9f9c4a-0285-4c0f-a3d1-615e9fa1f714" title="Permalink to this equation">#</a></span>\[\begin{equation}
     c = \frac{\sum{y} - m \cdot \sum{x}}{N}.
 \end{equation}\]</div>
-<p>Lets perform the calculations above to derive values for the gradient and intercept of the line of best fit for our noisy data:</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Performing the calculations used to determine the gradient:</span>
-<span class="n">N_sum_xy</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">xData</span><span class="p">)</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">xData</span> <span class="o">*</span> <span class="n">yData</span><span class="p">)</span> 
-<span class="n">sum_x_sum_y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">xData</span><span class="p">)</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">yData</span><span class="p">)</span> 
-<span class="n">N_sum_xsquared</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">xData</span><span class="p">)</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">xData</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span> 
-<span class="n">sum_x_squared</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">xData</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span> 
-
-<span class="n">gradient</span> <span class="o">=</span> <span class="p">(</span><span class="n">N_sum_xy</span> <span class="o">-</span> <span class="n">sum_x_sum_y</span><span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="n">N_sum_xsquared</span> <span class="o">-</span> <span class="n">sum_x_squared</span><span class="p">)</span>
-
-<span class="c1">#Performing the calculations used to determine the intercept:</span>
-<span class="n">sum_y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">yData</span><span class="p">)</span> 
-<span class="n">sum_x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">xData</span><span class="p">)</span>
-    
-<span class="n">intercept</span> <span class="o">=</span> <span class="p">(</span><span class="n">sum_y</span> <span class="o">-</span> <span class="n">gradient</span><span class="o">*</span><span class="n">sum_x</span><span class="p">)</span><span class="o">/</span><span class="nb">len</span><span class="p">(</span><span class="n">xData</span><span class="p">)</span>
-
-<span class="c1">#Plotting the data, line of best fit, and an annotation containing the gradient and intercept:  </span>
-<span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">xData</span><span class="p">,</span> <span class="n">yData</span><span class="p">,</span> <span class="n">marker</span> <span class="o">=</span> <span class="s1">&#39;o&#39;</span><span class="p">,</span> <span class="n">color</span> <span class="o">=</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">xData</span><span class="p">,</span> <span class="n">gradient</span><span class="o">*</span><span class="n">xData</span> <span class="o">+</span> <span class="n">intercept</span><span class="p">,</span> <span class="n">color</span> <span class="o">=</span><span class="s1">&#39;k&#39;</span><span class="p">,</span> <span class="n">linestyle</span> <span class="o">=</span> <span class="s1">&#39;--&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;xData&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;yData&#39;</span><span class="p">)</span>
-
-<span class="n">txt</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="s1">&#39;The gradient is: &#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">{:.3f}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">gradient</span><span class="p">))</span> <span class="o">+</span> <span class="s1">&#39;.&#39;</span> <span class="o">+</span> <span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span> <span class="o">+</span> 
-          <span class="s1">&#39;The intercept is: &#39;</span><span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">{:.3f}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">intercept</span><span class="p">))</span> <span class="o">+</span> <span class="s1">&#39;.&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="nb">max</span><span class="p">(</span><span class="n">yData</span><span class="p">)</span><span class="o">-</span><span class="mi">8</span><span class="p">,</span> <span class="n">txt</span><span class="p">,</span> <span class="n">wrap</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">horizontalalignment</span><span class="o">=</span><span class="s1">&#39;left&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> 
-         <span class="n">bbox</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">facecolor</span><span class="o">=</span><span class="s1">&#39;lightgrey&#39;</span><span class="p">,</span> <span class="n">edgecolor</span><span class="o">=</span><span class="s1">&#39;k&#39;</span><span class="p">,</span> <span class="n">pad</span><span class="o">=</span><span class="mf">5.0</span><span class="p">))</span>
-
-<span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">()</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
+<p>If we perform the calculations above to derive values for the gradient and intercept of the line of best fit for our noisy data (these were performed in Python, but the code is hidden here), we get the following plot:</p>
+<div class="cell tag_remove-input docutils container">
 <div class="cell_output docutils container">
-<img alt="_images/1fa87fff1d3ee53ee6a1254500dd83882e0d3ef2f6fa52110742ed7f8e07e2b0.png" src="_images/1fa87fff1d3ee53ee6a1254500dd83882e0d3ef2f6fa52110742ed7f8e07e2b0.png" />
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">scipy.stats</span> <span class="k">as</span> <span class="nn">stats</span>
-
-<span class="c1">#Performing the linear regression using the linregress function</span>
-<span class="n">FitResults</span> <span class="o">=</span> <span class="n">stats</span><span class="o">.</span><span class="n">linregress</span><span class="p">(</span><span class="n">xData</span><span class="p">,</span> <span class="n">yData</span><span class="p">)</span>
-
-<span class="c1">#Plotting the data, line of best fit, and an annotation containing the gradient and intercept: </span>
-<span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">xData</span><span class="p">,</span> <span class="n">yData</span><span class="p">,</span> <span class="n">marker</span> <span class="o">=</span> <span class="s1">&#39;o&#39;</span><span class="p">,</span> <span class="n">color</span> <span class="o">=</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">xData</span><span class="p">,</span> <span class="n">FitResults</span><span class="o">.</span><span class="n">slope</span><span class="o">*</span><span class="n">xData</span> <span class="o">+</span> <span class="n">FitResults</span><span class="o">.</span><span class="n">intercept</span><span class="p">,</span> <span class="n">color</span> <span class="o">=</span><span class="s1">&#39;k&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;xData&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;yData&#39;</span><span class="p">)</span>
-
-<span class="n">txt</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="s1">&#39;The gradient is: &#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">{:.3f}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">FitResults</span><span class="o">.</span><span class="n">slope</span><span class="p">))</span> <span class="o">+</span> <span class="s1">&#39;.&#39;</span> <span class="o">+</span> <span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span> <span class="o">+</span> 
-          <span class="s1">&#39;The intercept is: &#39;</span><span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">{:.3f}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">FitResults</span><span class="o">.</span><span class="n">intercept</span><span class="p">))</span> <span class="o">+</span> <span class="s1">&#39;.&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="nb">max</span><span class="p">(</span><span class="n">yData</span><span class="p">)</span><span class="o">-</span><span class="mi">8</span><span class="p">,</span> <span class="n">txt</span><span class="p">,</span> <span class="n">wrap</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">horizontalalignment</span><span class="o">=</span><span class="s1">&#39;left&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">bbox</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">facecolor</span><span class="o">=</span><span class="s1">&#39;lightgrey&#39;</span><span class="p">,</span> <span class="n">edgecolor</span><span class="o">=</span><span class="s1">&#39;k&#39;</span><span class="p">,</span> <span class="n">pad</span><span class="o">=</span><span class="mf">5.0</span><span class="p">))</span>
-
-<span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">()</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<img alt="_images/dbffc775f9df258e49ecc8eec5c68890a2e9e9f494a6ef5fcb976d296c272c83.png" src="_images/dbffc775f9df258e49ecc8eec5c68890a2e9e9f494a6ef5fcb976d296c272c83.png" />
+<img alt="_images/522634fc0fdc0b2f76e6a42be395f8959ff42e8f7689ca0fe9e614fa4a827cc3.png" src="_images/522634fc0fdc0b2f76e6a42be395f8959ff42e8f7689ca0fe9e614fa4a827cc3.png" />
 </div>
 </div>
 <p>From the figure above, it is apparent that the line of best fit we have calculated is the same as the one calculated by the scipy.stats.linregress function. We now understand what this function is doing!</p>
@@ -731,89 +939,107 @@ document.write(`
 <p>In our example above we simply stated what the equations used to determine our optimal value of the gradient and intercept were, but we proivded no explaination as to how these equations were derived. This will be explained in this section.</p>
 <p>Note: An understanding of partial differention is required to perform this derivation.</p>
 <p>Once again we are going to consider this idea of the residual, we defined this earlier as the difference between the line of best fit and any given data point. Written mathematically this may be expressed as:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-56241c9a-ff97-4eb7-96ec-68456fe1437c">
-<span class="eqno">(4)<a class="headerlink" href="#equation-56241c9a-ff97-4eb7-96ec-68456fe1437c" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-7226c94f-fb47-44f6-ada1-51ccdab94a0f">
+<span class="eqno">(4)<a class="headerlink" href="#equation-7226c94f-fb47-44f6-ada1-51ccdab94a0f" title="Permalink to this equation">#</a></span>\[\begin{equation}
 R = y_{data}-y_{model},
 \end{equation}\]</div>
 <p>which may also be expressed as:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-853f451b-b24f-4430-8742-7ea58be7ba18">
-<span class="eqno">(5)<a class="headerlink" href="#equation-853f451b-b24f-4430-8742-7ea58be7ba18" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-d4c6c752-0f93-4f02-9bae-7eadc2121c62">
+<span class="eqno">(5)<a class="headerlink" href="#equation-d4c6c752-0f93-4f02-9bae-7eadc2121c62" title="Permalink to this equation">#</a></span>\[\begin{equation}
 R = y_{data} - (m*x + c),
 \end{equation}\]</div>
 <p>where <span class="math notranslate nohighlight">\(m\)</span> and <span class="math notranslate nohighlight">\(c\)</span> are the gradient and intercept determined by our linear regression. Now we can consider the sum of the squared residuals:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-7b093552-8295-43bd-a525-e0cfed1afa22">
-<span class="eqno">(6)<a class="headerlink" href="#equation-7b093552-8295-43bd-a525-e0cfed1afa22" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-ffc095fc-54b7-4a8f-8e77-12cd1b052ce0">
+<span class="eqno">(6)<a class="headerlink" href="#equation-ffc095fc-54b7-4a8f-8e77-12cd1b052ce0" title="Permalink to this equation">#</a></span>\[\begin{equation}
 \sum{R^{2}}= \sum{[y_{data} - (mx + c)]^{2}}.
 \end{equation}\]</div>
 <p>In a simple linear regression, we want to minimise the value of the sum of the squared residuals. How do we do this? Another way to say this is we want to find the minimum of the function, which suggests that we need to do some differentiation! In this case we are going to take the partial derivatives of the function with respect to the terms we are trying to minimise <span class="math notranslate nohighlight">\(m\)</span> and <span class="math notranslate nohighlight">\(c\)</span>:</p>
-<p><font color=blue>\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-95238f40-eef5-4dfb-ac18-6acc2736b1fb">
+<span class="eqno">(7)<a class="headerlink" href="#equation-95238f40-eef5-4dfb-ac18-6acc2736b1fb" title="Permalink to this equation">#</a></span>\[\begin{equation}
 \frac{\partial \sum R^{2}}{\partial m}= \sum \frac{\partial}{\partial m} \left([y_{data} - (mx + c)]^{2} \right)
-\end{equation}</font></p>
+\end{equation}\]</div>
 <p>We can solve this partial differential by using the chain rule: We will bring down the power and then multiply by the partial differential of what is inside the brackets:</p>
-<p><font color=blue>\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-5d2963b9-fc47-4669-8119-445201ad8400">
+<span class="eqno">(8)<a class="headerlink" href="#equation-5d2963b9-fc47-4669-8119-445201ad8400" title="Permalink to this equation">#</a></span>\[\begin{equation}
 \frac{\partial \sum R^{2}}{\partial m}= \sum{2 \cdot [y_{data} - (mx + c)]\cdot -x}
-\end{equation}</font></p>
+\end{equation}\]</div>
 <p>Similarly, when taking the partial differential with respect to <span class="math notranslate nohighlight">\(c\)</span> we get:</p>
-<p><font color=green>\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-5eb8e536-2367-4c2a-82c8-5f375cbc6b69">
+<span class="eqno">(9)<a class="headerlink" href="#equation-5eb8e536-2367-4c2a-82c8-5f375cbc6b69" title="Permalink to this equation">#</a></span>\[\begin{equation}
 \frac{\partial \sum R^{2}}{\partial c}= \sum \frac{\partial}{\partial c} \left([y_{data} - (mx + c)]^{2} \right) = \sum{2\cdot [y_{data} - (mx + c)]\cdot -1}
-\end{equation}</font></p>
+\end{equation}\]</div>
 <p>Next, as we want to find the values of <span class="math notranslate nohighlight">\(m\)</span> and <span class="math notranslate nohighlight">\(c\)</span> when the function is at a minimum, we set the partial differentials equal to zero:</p>
-<p><font color=blue>\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-e0cb752d-8161-4728-8c3a-f55f47ecf03d">
+<span class="eqno">(10)<a class="headerlink" href="#equation-e0cb752d-8161-4728-8c3a-f55f47ecf03d" title="Permalink to this equation">#</a></span>\[\begin{equation}
 -2\sum{[y_{data} - (mx + c)]\cdot x} = 0,
-\end{equation}</font></p>
+\end{equation}\]</div>
 <p>and</p>
-<p><font color=green>\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-15c97c44-dfc9-44d2-a058-690b0e6de15f">
+<span class="eqno">(11)<a class="headerlink" href="#equation-15c97c44-dfc9-44d2-a058-690b0e6de15f" title="Permalink to this equation">#</a></span>\[\begin{equation}
 -2 \sum{[y_{data} - (mx + c)]} = 0.
-\end{equation}</font></p>
+\end{equation}\]</div>
 <p>Finally, we solve these simeltanous equations to determine the values of <span class="math notranslate nohighlight">\(m\)</span> and <span class="math notranslate nohighlight">\(c\)</span>. Let’s begin by rewriting our equations so that they are easier to solve. The <span class="math notranslate nohighlight">\(-2\)</span> terms disappear when we set the equations equal to zero:</p>
-<p><font color=blue>\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-69245bfc-3a46-407b-a9c2-451a86c908fa">
+<span class="eqno">(12)<a class="headerlink" href="#equation-69245bfc-3a46-407b-a9c2-451a86c908fa" title="Permalink to this equation">#</a></span>\[\begin{equation}
 \left(\sum{y_{data}} -\sum{mx} -\sum{c}\right)x = 0,
-\end{equation}</font></p>
+\end{equation}\]</div>
 <p>and</p>
-<p><font color=green>\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-53c311ff-7c7e-410f-9673-77d1eb2d184d">
+<span class="eqno">(13)<a class="headerlink" href="#equation-53c311ff-7c7e-410f-9673-77d1eb2d184d" title="Permalink to this equation">#</a></span>\[\begin{equation}
 \sum{y_{data}} -\sum{mx} -\sum{c} = 0.
-\end{equation}</font></p>
+\end{equation}\]</div>
 <p>As <span class="math notranslate nohighlight">\(m\)</span> and <span class="math notranslate nohighlight">\(c\)</span> are constants, they may be taken out of the summations, such that:</p>
-<p><font color=blue>\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-13052921-ce99-4272-9458-ab6eb514ee0e">
+<span class="eqno">(14)<a class="headerlink" href="#equation-13052921-ce99-4272-9458-ab6eb514ee0e" title="Permalink to this equation">#</a></span>\[\begin{equation}
 \left(\sum{y_{data}} -m\sum{x} -(n\cdot c)\right)x = 0,
-\end{equation}</font></p>
+\end{equation}\]</div>
 <p>and</p>
-<p><font color=green>\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-77ab5a60-4c3f-4cb7-80c8-6cb76c783bf5">
+<span class="eqno">(15)<a class="headerlink" href="#equation-77ab5a60-4c3f-4cb7-80c8-6cb76c783bf5" title="Permalink to this equation">#</a></span>\[\begin{equation}
 \sum{y_{data}} -m\sum{x} -(n\cdot c) = 0.
-\end{equation}</font></p>
+\end{equation}\]</div>
 <p>Therefore, our equation for the intercept becomes:</p>
-<p><font color=green>\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-b8efa7c9-766f-43d4-a06c-f77f8ba0e96c">
+<span class="eqno">(16)<a class="headerlink" href="#equation-b8efa7c9-766f-43d4-a06c-f77f8ba0e96c" title="Permalink to this equation">#</a></span>\[\begin{equation}
 c = \frac{\sum{y_{data}}}{n} - \frac{m\sum{x}}{n}.
-\end{equation}</font></p>
+\end{equation}\]</div>
 <p>which is equal to the equation we used in the previous section to determine our value of the intercept:</p>
-<p><font color=green>\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-7d37d0f4-555f-41f5-bc6c-f698fb9f23ef">
+<span class="eqno">(17)<a class="headerlink" href="#equation-7d37d0f4-555f-41f5-bc6c-f698fb9f23ef" title="Permalink to this equation">#</a></span>\[\begin{equation}
 c = \frac{\sum{y_{data}} - m\sum{x}}{n}.
-\end{equation}</font></p>
+\end{equation}\]</div>
 <p>As the sum of the a set of values divided by the number of values is equal to the average value, the expression above can be expressed in terms of the mean values of y and x, <span class="math notranslate nohighlight">\(\bar{y}\)</span> and <span class="math notranslate nohighlight">\(\bar{x}\)</span>, respectively:</p>
-<p><font color=green>\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-c052d8f6-855e-4dac-b23e-7e8a934db7a8">
+<span class="eqno">(18)<a class="headerlink" href="#equation-c052d8f6-855e-4dac-b23e-7e8a934db7a8" title="Permalink to this equation">#</a></span>\[\begin{equation}
 c = \bar{y} - m \cdot \bar{x}.
-\end{equation}</font></p>
+\end{equation}\]</div>
 <p>Using the expression for the intercept, we are able to determine a value for our gradient:</p>
-<p><font color=blue>\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-8bc07d9a-a10d-49ae-930c-22bae4a4544c">
+<span class="eqno">(19)<a class="headerlink" href="#equation-8bc07d9a-a10d-49ae-930c-22bae4a4544c" title="Permalink to this equation">#</a></span>\[\begin{equation}
 \sum{[y_{data} - (mx + \bar{y} - m \cdot \bar{x})]\cdot x} = 0,
-\end{equation}</font></p>
-<p><font color=blue>\begin{equation}
+\end{equation}\]</div>
+<div class="amsmath math notranslate nohighlight" id="equation-3d298a1c-fa2c-43ca-abc0-b96d57d1f5ae">
+<span class="eqno">(20)<a class="headerlink" href="#equation-3d298a1c-fa2c-43ca-abc0-b96d57d1f5ae" title="Permalink to this equation">#</a></span>\[\begin{equation}
 \sum{[y_{data} - \bar{y} - m(x - \bar{x})]\cdot x} = 0.
-\end{equation}</font></p>
-<p>We may then solve the equation for m:</p>
-<p><font color=blue>\begin{equation}
+\end{equation}\]</div>
+<p>We may then solve the equation for <span class="math notranslate nohighlight">\(m\)</span>:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-ade3cca2-b7c3-4743-bc71-a17b9ffb94cf">
+<span class="eqno">(21)<a class="headerlink" href="#equation-ade3cca2-b7c3-4743-bc71-a17b9ffb94cf" title="Permalink to this equation">#</a></span>\[\begin{equation}
 \sum{x(y_{data} - \bar{y})} - mx \sum{(x - \bar{x})} = 0,
-\end{equation}</font></p>
-<p><font color=blue>\begin{equation}
+\end{equation}\]</div>
+<div class="amsmath math notranslate nohighlight" id="equation-950a1be9-e579-4012-94b8-f92f3c986346">
+<span class="eqno">(22)<a class="headerlink" href="#equation-950a1be9-e579-4012-94b8-f92f3c986346" title="Permalink to this equation">#</a></span>\[\begin{equation}
 \sum{x(y_{data} - \bar{y})} = mx \sum{(x - \bar{x})},
-\end{equation}</font></p>
-<p><font color=blue>\begin{equation}
+\end{equation}\]</div>
+<div class="amsmath math notranslate nohighlight" id="equation-3946cf7e-46e2-4e9f-85d6-69292f371061">
+<span class="eqno">(23)<a class="headerlink" href="#equation-3946cf7e-46e2-4e9f-85d6-69292f371061" title="Permalink to this equation">#</a></span>\[\begin{equation}
 m=\frac{x\sum{(y_{data} - \bar{y})}} {x\sum{(x - \bar{x})}},
-\end{equation}</font></p>
+\end{equation}\]</div>
 <p>which may be shown to be equal to the equation we used in the previous section to determine our value of the gradient:</p>
-<p><font color=blue>\begin{equation}
-m = \frac{N\sum{x \cdot y} + \sum{x} \cdot\sum{y}}{N\sum{\left(x^2\right)} - \sum{\left(x\right)}^2}.
-\end{equation}</font></p>
+<div class="amsmath math notranslate nohighlight" id="equation-8ce62b43-28f2-419e-8c60-7e9fad5fe97d">
+<span class="eqno">(24)<a class="headerlink" href="#equation-8ce62b43-28f2-419e-8c60-7e9fad5fe97d" title="Permalink to this equation">#</a></span>\[\begin{equation}
+ m = \frac{N\sum{x \cdot y} + \sum{x} \cdot\sum{y}}{N\sum{\left(x^2\right)} - \sum{\left(x\right)}^2}.
+\end{equation}\]</div>
 </div>
 </div>
 <hr class="docutils" />
@@ -823,93 +1049,33 @@ m = \frac{N\sum{x \cdot y} + \sum{x} \cdot\sum{y}}{N\sum{\left(x^2\right)} - \su
 <h3>Plotting Functions<a class="headerlink" href="#plotting-functions" title="Permalink to this heading">#</a></h3>
 <p>Many of the topics that we come across in physics may come across as rather abstract, for example we will often look at relationships between variables that are described by equations too complex to visualise in our heads. In these instances, it may be useful to plot the equation and change the value of each variable to gain a better understanding of the relationship being described.</p>
 <p>In this activity, we will compound our learning of functions from last week and exercise our new understanding of how to visualise data. For each of the relationships below, define a function, and for a series of x values plot the corresponding y values. For each relationship, also plot (on the same set of axes) the function again, but this time having modified one or more variables. Ensure that the plots you create have the features of a high quality plot.</p>
-<p>Please define functions for and plot the relationships outlined below.</p>
-<p><strong>1. Straight Line of Best Fit.</strong></p>
+<p>Please define functions for and plot the relationships outlined below. Use (np.linspace)[https://numpy.org/doc/stable/reference/generated/numpy.linspace.html] when generating a range of x-values for each distribution.</p>
+<p><strong>1. Straight Line</strong></p>
 <p>This is what you will use most frequently during your first year experimental lab:</p>
 <div class="math notranslate nohighlight">
 \[ y(x) = mx +c \]</div>
 <p>where <span class="math notranslate nohighlight">\( m \)</span> and <span class="math notranslate nohighlight">\( c \)</span> are the gradient and intercept of the line of best fit, respectively.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
-<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-
-<span class="c1"># Straight line of best fit task</span>
-
-<span class="c1"># Define function</span>
-
-<span class="c1"># Plot function</span>
-</pre></div>
-</div>
-</div>
-</div>
 <p><strong>2. The Gaussian Distribution</strong></p>
 <p>This is the normal distribution discussed in week one when considering normal statistics (mean, standard deviation and standard error):</p>
 <div class="math notranslate nohighlight">
 \[ f(x) = a \exp{-\frac{(x-b)^2}{2c^2}}  \]</div>
 <p>where <span class="math notranslate nohighlight">\(a\)</span> is the height of the distribution, <span class="math notranslate nohighlight">\(b\)</span> is the mean value of the distribution, and <span class="math notranslate nohighlight">\(c\)</span> is the standard deviation of the distribution.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Gaussian distribution task</span>
-
-<span class="c1"># Define function</span>
-
-<span class="c1"># Plot function</span>
-</pre></div>
-</div>
-</div>
-</div>
 <p><strong>3. The Maxwell-Boltzmann distribution</strong></p>
 <p>This equation was introduced in your thermal physics lectures. It is a probability distribution that describes the probability that a molecule has a particular speed for a given molecular mass and temperature:</p>
 <div class="math notranslate nohighlight">
 \[ f(v) = \frac{4}{\sqrt{\pi}} \left(\frac{m}{2k_BT}\right)^{3/2}  v^2 \exp{\frac{-mv^2}{2k_BT}}\]</div>
-<p>where <span class="math notranslate nohighlight">\( m \)</span> is the mass of the molecule, <span class="math notranslate nohighlight">\( T \)</span> is the temperature, <span class="math notranslate nohighlight">\( v \)</span> is the velocity of the molecule, and <span class="math notranslate nohighlight">\( k_B \)</span> is the Boltzmann constant.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Maxwell-Boltzmann task</span>
-
-<span class="c1"># Define function</span>
-
-<span class="c1"># Plot function</span>
-</pre></div>
-</div>
-</div>
-</div>
+<p>where <span class="math notranslate nohighlight">\( m \)</span> is the mass of the molecule, <span class="math notranslate nohighlight">\( T \)</span> is the temperature, <span class="math notranslate nohighlight">\( v \)</span> is the velocity of the molecule, and <span class="math notranslate nohighlight">\( k_B \)</span> is the Boltzmann constant. Plot the distribution for a molecule with a mass of 5 atomic mass units at a temperature of 273 K for a range of velocities between 0 ms<span class="math notranslate nohighlight">\(^{-1}\)</span> and 5000 ms<span class="math notranslate nohighlight">\(^{-1}\)</span>.</p>
 <p><strong>4. The Projectile Equation</strong></p>
 <p>This was introduced in your very first mechanics lecture. It allows you to determine the vertical height of a projectile, <span class="math notranslate nohighlight">\(y\)</span>, at a given horizontal distance  from the projectile origin, <span class="math notranslate nohighlight">\(x\)</span>:</p>
 <div class="math notranslate nohighlight">
 \[ y(x) = x \tan(\theta) - \frac{gx^2}{2v_0^2\cos^2(\theta)} \]</div>
 <p>where <span class="math notranslate nohighlight">\(g\)</span> is acceleration due to gravity and  <span class="math notranslate nohighlight">\(\theta\)</span> is the angle, relative to the horizontal plane, that the projectile is launched at.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Projectile Equation task</span>
-
-<span class="c1"># Define function</span>
-
-<span class="c1"># Plot function</span>
-</pre></div>
-</div>
-</div>
-</div>
 </div>
 <div class="section" id="fitting-and-plotting-data">
 <h3>Fitting and Plotting Data<a class="headerlink" href="#fitting-and-plotting-data" title="Permalink to this heading">#</a></h3>
 <p>Two sets of linear data have been provided. You are tasked with performing a manual regression for each dataset using whatever tool you feel most comfortable using (i.e. you may wish to define a function to perform the regression or perform the calculation in a spreadsheet/generally using Python).</p>
 <p>Once you have performed the regression and determined values for the gradients and intercepts, create two plots in the same figure using subplots, one for each dataset. Each subplot should contain the raw data, the line of best fit and all of the features of a high quality plot.</p>
 <p><em>Hint: when adding the line of best fits to the plot you may wish to use the straight line function you defined in the previous task.</em></p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Fitting and Plotting Task</span>
-
-<span class="c1"># Import data</span>
-
-<span class="c1"># Manual regression / define fitting function</span>
-
-<span class="c1"># Plot data and lines of best fit on subplots.</span>
-</pre></div>
-</div>
-</div>
-</div>
 </div>
 </div>
 </div>

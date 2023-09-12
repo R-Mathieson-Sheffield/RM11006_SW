@@ -379,7 +379,7 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#overview">Overview</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#strings">Strings</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ints-and-floats">Ints and floats</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lists-tuples-and-dictionaries">Lists,Tuples and Dictionaries</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lists-and-tuples">Lists and Tuples</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dictionaries">Dictionaries</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#numpy-arrays">Numpy Arrays</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#activities">Activities</a><ul class="nav section-nav flex-column">
@@ -707,7 +707,7 @@ yeah yeah yeah
 </div>
 </div>
 </div>
-<p>As a consequence of how computers store information using binary (1’s and 0’s), often the number we tell the computer to use is not the exact number it uses, although using a 64bit computer, the difference will be very small! (Supplementary reading: how computers store information).</p>
+<p>As a consequence of how computers store information using binary (1’s and 0’s), often the number we tell the computer to use is not the exact number it uses, although using a 64bit computer, the difference will be very small!</p>
 <p>If we execute the following code calculation in our computer we would expect it to return the answer 0.55, but this is not the answer we get…</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -722,8 +722,8 @@ yeah yeah yeah
 </div>
 </div>
 </div>
-<div class="section" id="lists-tuples-and-dictionaries">
-<h2>Lists,Tuples and Dictionaries<a class="headerlink" href="#lists-tuples-and-dictionaries" title="Permalink to this heading">#</a></h2>
+<div class="section" id="lists-and-tuples">
+<h2>Lists and Tuples<a class="headerlink" href="#lists-and-tuples" title="Permalink to this heading">#</a></h2>
 <p>Up to this point we have only considered how to store single items of information, but often we will need to store more information. For example, if we wanted to plot a graph we would need the information corresponding to the x-coordinates and the information corresponding to the y-coordinates. It would be impractical to store every single x and y value as a single variable.</p>
 <p>In Python a list is just a collection of information. To define a list we simply put our information in a set of square brackets and separate each item using a comma. As before we can slice, concatenate and index our list items.</p>
 <div class="cell docutils container">
@@ -739,14 +739,14 @@ yeah yeah yeah
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Using the index I can extract items from a list or slice the list:</span>
 <span class="n">islandNations</span> <span class="o">=</span> <span class="n">nordicCountries</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;The island nations that are part of the nordic nations include: &quot;</span><span class="p">,</span> <span class="n">islandNations</span><span class="p">)</span>
-<span class="n">continentalNordics</span> <span class="o">=</span> <span class="n">nordicCountries</span><span class="p">[</span><span class="mi">1</span><span class="p">:</span><span class="mi">4</span><span class="p">]</span>
+<span class="n">continentalNordics</span> <span class="o">=</span> <span class="n">nordicCountries</span><span class="p">[</span><span class="mi">1</span><span class="p">:</span><span class="mi">5</span><span class="p">]</span>
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;The continental nations that are part of the nordic nations include: &quot;</span><span class="p">,</span> <span class="n">continentalNordics</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The island nations that are part of the nordic nations include:  Iceland
-The continental nations that are part of the nordic nations include:  [&#39;Denmark&#39;, &#39;Norway&#39;, &#39;Sweden&#39;]
+The continental nations that are part of the nordic nations include:  [&#39;Denmark&#39;, &#39;Norway&#39;, &#39;Sweden&#39;, &#39;Finland&#39;]
 </pre></div>
 </div>
 </div>
@@ -761,7 +761,7 @@ The continental nations that are part of the nordic nations include:  [&#39;Denm
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Of the nations that form the baltic and nordic countries, the following are continental: 
- [&#39;Estonia&#39;, &#39;Lativa&#39;, &#39;Lithuania&#39;, &#39;Denmark&#39;, &#39;Norway&#39;, &#39;Sweden&#39;]
+ [&#39;Estonia&#39;, &#39;Lativa&#39;, &#39;Lithuania&#39;, &#39;Denmark&#39;, &#39;Norway&#39;, &#39;Sweden&#39;, &#39;Finland&#39;]
 </pre></div>
 </div>
 </div>
@@ -1034,10 +1034,10 @@ Shape (3, 3)
 </div>
 </div>
 <p>Before we move onto the next topic, I would like to make you aware of a few tools in numpy that you may find useful:</p>
-<p>np.zeros() - used to create an array filled with zeros,</p>
-<p>np.ones() - used to create an array filled with ones,</p>
-<p>np.linspace() - used to create a 1D array with linearly spaced values between a start and stop, where we define how many values we would like in our array,</p>
-<p>np.arange().- used to create a 1D array with values between a start and stop, where we define the step increment between the two values.</p>
+<p><a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.zeros.html">np.zeros()</a> - used to create an array filled with zeros,</p>
+<p><a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ones.html">np.ones()</a> - used to create an array filled with ones,</p>
+<p><a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.linspace.html">np.linspace()</a> - used to create a 1D array with linearly spaced values between a start and stop, where we define how many values we would like in our array,</p>
+<p><a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.arange.html">np.arange()</a>.- used to create a 1D array with values between a start and stop, where we define the step increment between the two values.</p>
 <p>Examples of the following numpy tools are provided below:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1249,7 +1249,7 @@ Shape (3, 3)
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#overview">Overview</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#strings">Strings</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ints-and-floats">Ints and floats</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lists-tuples-and-dictionaries">Lists,Tuples and Dictionaries</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lists-and-tuples">Lists and Tuples</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dictionaries">Dictionaries</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#numpy-arrays">Numpy Arrays</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#activities">Activities</a><ul class="nav section-nav flex-column">

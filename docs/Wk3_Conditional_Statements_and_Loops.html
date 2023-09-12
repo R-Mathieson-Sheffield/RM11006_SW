@@ -417,7 +417,7 @@ document.write(`
 <hr class="docutils" />
 <div class="section" id="overview">
 <h2>Overview<a class="headerlink" href="#overview" title="Permalink to this heading">#</a></h2>
-<p>In this session you will be introduced to the concepts of conditional statements and loops. You will learn how to use if, and, else, elseif statements and for and while loops. We are going to understand why we may wish to make graphical representations of data, have an awareness of the features that must be present on a high-quality plot, and then learn how to make high-quality 2D plots using Python.</p>
+<p>In this session you will be introduced to the concepts of conditional statements and loops. You will learn how to use <strong>if</strong>, <strong>and</strong>, <strong>else</strong>, <strong>elif</strong> statements and <strong>for</strong> and <strong>while</strong> loops. We are going to understand why we may wish to make graphical representations of data, have an awareness of the features that must be present on a high-quality plot, and then learn how to make high-quality 2D plots using Python.</p>
 </div>
 <hr class="docutils" />
 <div class="section" id="conditional-statements">
@@ -425,7 +425,7 @@ document.write(`
 <p>Often when we are coding we want the computer to make decisions for us. For example, when boiling a kettle, we would like the kettle to know when to stop supplying energy to the water.  In this example, we would get the kettle to ask itself “is the water at boiling point?” - if the answer is yes then it should turn off, if the answer is no it should not turn off.</p>
 <div class="section" id="single-conditions">
 <h3>Single Conditions<a class="headerlink" href="#single-conditions" title="Permalink to this heading">#</a></h3>
-<p>All of the conditions that we define are either True or False - these are boolean types. We can use if, else and elif (else if) statements to control tasks on the basis of if a condition is true or false.</p>
+<p>All of the conditions that we define are either True or False - these are boolean types. We can use <strong>if</strong>, <strong>else</strong> and <strong>elif</strong> (else if) statements to control tasks on the basis of if a condition is true or false.</p>
 <p>The simplest example of checking conditions is comparing numbers.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -498,9 +498,13 @@ True
 <div class="section" id="multiple-conditions">
 <h3>Multiple Conditions<a class="headerlink" href="#multiple-conditions" title="Permalink to this heading">#</a></h3>
 <p>It is often the case that we will want to get the computer to do things only if multiple conditions are true, or if one of many possible conditions are true. We do this all the time in real life, for example, I may get my phone to remind me to pay my credit card bill if:</p>
-<p>the payment is due today and my balance is greater than £0</p>
-<p>or</p>
-<p>it’s payday and my balance is greater than £0.</p>
+<ul class="simple">
+<li><p>the payment is due today and my balance is greater than £0</p></li>
+</ul>
+<p>OR</p>
+<ul class="simple">
+<li><p>it’s payday and my balance is greater than £0.</p></li>
+</ul>
 <p>From the example above, the logic behind the decision as to whether to remind me to pay my credit card bill or not is clear. In either case, I will not receive a reminder if my balance is clear and I have nothing to pay, however if I have an outstanding balance I should be reminded to pay it if the payment is due (to avoid additional charges) or if it is payday (and I am settling my monthly finances).</p>
 <p>In Python, we can apply the same logic using and and or statements:</p>
 <div class="cell docutils container">
@@ -566,7 +570,7 @@ True
 <hr class="docutils" />
 <div class="section" id="loops">
 <h2>Loops<a class="headerlink" href="#loops" title="Permalink to this heading">#</a></h2>
-<p>As mentioned in week 1, one of the main reasons we use computers is to get them to do all of the boring repetitive tasks we don’t want to do. When we are coding, we can tell the computer to iterate a task by using loops. There are two loops to be aware of: for loops and while loops.</p>
+<p>As mentioned in week 1, one of the main reasons we use computers is to get them to do all of the boring repetitive tasks we don’t want to do. When we are coding, we can tell the computer to iterate a task by using loops. There are two loops to be aware of: <strong>for</strong> loops and <strong>while</strong> loops.</p>
 <div class="section" id="while-loops">
 <h3>While Loops<a class="headerlink" href="#while-loops" title="Permalink to this heading">#</a></h3>
 <p>A while loop allows us to iterate through a task until a condition is no longer met. In the example below, each time the loop runs it will print the value of count and add 1 to it. It will continue to do this until count = 15.</p>
@@ -957,14 +961,14 @@ The first ten multiples of  10  are:
 <h2>Activities<a class="headerlink" href="#activities" title="Permalink to this heading">#</a></h2>
 <p>Below are some exercises to complete to practise using conditional statements and loops. You may wish to review the notes from previous weeks to help you complete these exercises.</p>
 <ol class="arabic simple">
-<li><p>For the given list of numbers, write a loop that identifies the smallest and largest numbers in the list. The loop should print both of these numbers.</p></li>
+<li><p>For the given list of numbers, write a loop that identifies the smallest and largest numbers in the list. The loop should print both of these numbers. You may find it useful to use the <a class="reference external" href="https://www.w3schools.com/python/ref_func_min.asp">min()</a> and <a class="reference external" href="https://www.w3schools.com/python/ref_func_max.asp">max()</a> functions for this task.</p></li>
 </ol>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 
 <span class="c1"># Complete exercise 1 here.</span>
-<span class="n">theData</span> <span class="o">=</span> <span class="p">[</span><span class="mi">22</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">40</span><span class="p">]</span>
+<span class="n">theData</span> <span class="o">=</span> <span class="p">[</span><span class="mi">22</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">40</span><span class="p">]</span>
 </pre></div>
 </div>
 </div>
@@ -980,7 +984,7 @@ The first ten multiples of  10  are:
 </div>
 </div>
 <ol class="arabic simple" start="3">
-<li><p>Define two numbers as floating point numbers, write a function that tells you which of the two numbers is the largest. Test this for multiple number pairs.</p></li>
+<li><p>Define two numbers as floating point numbers, write a function that tells you which of the two numbers is the largest and which of the product and sum of the two numbers is the largest. Test this for multiple number pairs.</p></li>
 </ol>
 <ol class="arabic simple" start="4">
 <li><p>This one is up to you! Create a while loop that outputs <em>something</em> until a condition of your choosing is met.</p></li>
