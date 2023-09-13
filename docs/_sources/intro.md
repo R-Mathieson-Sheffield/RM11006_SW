@@ -1,4 +1,4 @@
-# Welcome to PHYS11006 Computing Skills
+# Welcome to PHY11006 Computing Skills
 
 All scientists develop a large number of skills as part of their training. Many of these skills are shared between the disciplines of physics, biology and chemistry. For example, every scientist is expected to have developed skills in:
 
