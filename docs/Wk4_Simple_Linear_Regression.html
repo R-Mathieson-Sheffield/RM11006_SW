@@ -417,8 +417,8 @@ document.write(`
 <p>To quickly perform the same calculations we did last week in our manual regression, we can use the linregress function from the scipy.stats package in Python. The linregress function will not only return the intercept and gradient of the line of best fit for a given data set, but will also return the standard errors associated with the intercept and gradient and the Pearson’s correlation coefficient.</p>
 <p>The Pearson correlation coefficient, r, can take on any value between -1 and 1, and is a measure of the strength of the correlation between two variables. If the correlation coefficient is equal to -1, this is indicative of a strong negative correlation, whereas a correlation coefficient equal to 1 is indicative of a strong positive correlation. If there is no correlation the value will be equal to 0. A value between 0 and -1 or 0 and 1 indicates that there is a correlation, the strength of which is indicated by the magnitude of the value.</p>
 <p>You can calculate the Pearson correlation coefficient yourself using the following formula:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-f847893a-f60e-40f0-b9f4-b9fa64585d9f">
-<span class="eqno">(25)<a class="headerlink" href="#equation-f847893a-f60e-40f0-b9f4-b9fa64585d9f" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-f2446f86-5f59-426f-a762-92ef7e91e8f3">
+<span class="eqno">(25)<a class="headerlink" href="#equation-f2446f86-5f59-426f-a762-92ef7e91e8f3" title="Permalink to this equation">#</a></span>\[\begin{equation}
 r = \frac{\sum{(x_i - \bar{x})(y_i - \bar{y})}}{\sum{(x_i - \bar{x})^2} \cdot \sum{(y_i - \bar{y})^2}}
 \end{equation}\]</div>
 <p>where <span class="math notranslate nohighlight">\(x_i\)</span> is a given value of <span class="math notranslate nohighlight">\(x\)</span>, <span class="math notranslate nohighlight">\(\bar{x}\)</span> is the mean value of <span class="math notranslate nohighlight">\(x\)</span>, <span class="math notranslate nohighlight">\(y_i\)</span> is a given value of <span class="math notranslate nohighlight">\(y\)</span>, and <span class="math notranslate nohighlight">\(\bar{y}\)</span> is the mean value of <span class="math notranslate nohighlight">\(y\)</span>.</p>
@@ -463,11 +463,11 @@ r = \frac{\sum{(x_i - \bar{x})(y_i - \bar{y})}}{\sum{(x_i - \bar{x})^2} \cdot \s
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The gradient of the line of best fit is:  3.020  +\-  0.070 
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The gradient of the line of best fit is:  3.115  +\-  0.090 
 
-The intercept of the line of best fit is:  20.455  +\-  4.146 
+The intercept of the line of best fit is:  10.227  +\-  5.303 
 
-The Pearsons correlation coefficient is:  0.9975850029291644
+The Pearsons correlation coefficient is:  0.9962958640367927
 </pre></div>
 </div>
 </div>
@@ -487,7 +487,7 @@ The Pearsons correlation coefficient is:  0.9975850029291644
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/8079e7f2b161bd48410683edbdeed555d78dc1696ff4726e4819c8a571ba1c6b.png" src="_images/8079e7f2b161bd48410683edbdeed555d78dc1696ff4726e4819c8a571ba1c6b.png" />
+<img alt="_images/bc526612a919f180e580fca929ca9bd5a144fdb875ab1fce75601a573913e778.png" src="_images/bc526612a919f180e580fca929ca9bd5a144fdb875ab1fce75601a573913e778.png" />
 </div>
 </div>
 </div>
