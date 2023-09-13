@@ -896,40 +896,40 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/e9cabff1f65342d9c0255fefb78e6b334aa265369558dfee4a2471f32478572f.png" src="_images/e9cabff1f65342d9c0255fefb78e6b334aa265369558dfee4a2471f32478572f.png" />
+<img alt="_images/b91a1478ea7955e24b716c1dbbfb40fb97e254bc72b3118796e302af77419b6b.png" src="_images/b91a1478ea7955e24b716c1dbbfb40fb97e254bc72b3118796e302af77419b6b.png" />
 </div>
 </div>
 <p>If we then use the linear regression tool from scipy.stats (we will learn to use this next week!), we would obtain the following plot which has included a line of best fit determined using simple linear regression:</p>
 <div class="cell tag_remove-input docutils container">
 <div class="cell_output docutils container">
-<img alt="_images/6d2ca5ea03c9b392ec12635d17f4aa4c8b7bec5fb9d31c58de125f7876cf53f8.png" src="_images/6d2ca5ea03c9b392ec12635d17f4aa4c8b7bec5fb9d31c58de125f7876cf53f8.png" />
+<img alt="_images/43dc15e4c82b93433ee891adf7a51efbb31eb52b62c110afc94bcafc0bec6325.png" src="_images/43dc15e4c82b93433ee891adf7a51efbb31eb52b62c110afc94bcafc0bec6325.png" />
 </div>
 </div>
 </div>
 <div class="section" id="part-2-what-is-the-linregress-function-actually-doing">
 <h3>Part 2: What is the linregress function actually doing?<a class="headerlink" href="#part-2-what-is-the-linregress-function-actually-doing" title="Permalink to this heading">#</a></h3>
 <p>We now have a line of best fit determined computationally, but what were the calculations performed by the scipy.stats.linregress function when doing so? Lets first consider the model that we are aiming to fit, a straight line given by:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-1e3a498e-1134-4650-8188-d1355ed2f1ff">
-<span class="eqno">(1)<a class="headerlink" href="#equation-1e3a498e-1134-4650-8188-d1355ed2f1ff" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-940f68b2-c368-4b4b-acfd-ea86003387a9">
+<span class="eqno">(1)<a class="headerlink" href="#equation-940f68b2-c368-4b4b-acfd-ea86003387a9" title="Permalink to this equation">#</a></span>\[\begin{equation}
     y = mx+c, 
 \end{equation}\]</div>
 <p>where <span class="math notranslate nohighlight">\(x\)</span> represents an independent variable, <span class="math notranslate nohighlight">\(y\)</span> represents a dependant variable, and <span class="math notranslate nohighlight">\(m\)</span> and <span class="math notranslate nohighlight">\(c\)</span> represent the gradient and intercept of the line of best fit, respectively. In this example, we know what the values of <span class="math notranslate nohighlight">\(x\)</span> and <span class="math notranslate nohighlight">\(y\)</span> are and we are trying to determine appropriate values for <span class="math notranslate nohighlight">\(m\)</span> and <span class="math notranslate nohighlight">\(c\)</span>.</p>
 <p>With reference to the annotated plot below, we can see that for a given line of best fit, there is a vertical separation between each data point and the line. The discrepancies between the model line of best fit and data points are called the residuals. The least-squares fitting routine minimises the square of the residuals. We use the sum of the square rather than just the sum as some points lie below the line of best fit and others lie above, therefore if we were to just use the sum these values would cancel out and give a value close to zero.</p>
 <p><img alt="image" src="_images/SLR_plot_annotated.png" /></p>
 <p>The calculations to determine the value of gradient and intercept by minimising the sum of the squared residual values using the simple linear regression model are as follows:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-95fbddd9-b159-441b-816c-b8777562fd1d">
-<span class="eqno">(2)<a class="headerlink" href="#equation-95fbddd9-b159-441b-816c-b8777562fd1d" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-94bb53b5-5321-4b0b-8ed4-1aa746daa27d">
+<span class="eqno">(2)<a class="headerlink" href="#equation-94bb53b5-5321-4b0b-8ed4-1aa746daa27d" title="Permalink to this equation">#</a></span>\[\begin{equation}
     m = \frac{N\sum{x \cdot y} + \sum{x} \cdot\sum{y}}{N\sum{\left(x^2\right)} - \sum{\left(x\right)}^2},
 \end{equation}\]</div>
 <p>where <span class="math notranslate nohighlight">\(N\)</span> is the number of data points, and:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-8b016ed2-8f7f-4d92-82ab-c922f712a5f7">
-<span class="eqno">(3)<a class="headerlink" href="#equation-8b016ed2-8f7f-4d92-82ab-c922f712a5f7" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-73337021-5868-42a3-ae38-efdeebd33dea">
+<span class="eqno">(3)<a class="headerlink" href="#equation-73337021-5868-42a3-ae38-efdeebd33dea" title="Permalink to this equation">#</a></span>\[\begin{equation}
     c = \frac{\sum{y} - m \cdot \sum{x}}{N}.
 \end{equation}\]</div>
 <p>If we perform the calculations above to derive values for the gradient and intercept of the line of best fit for our noisy data (these were performed in Python, but the code is hidden here), we get the following plot:</p>
 <div class="cell tag_remove-input docutils container">
 <div class="cell_output docutils container">
-<img alt="_images/5967f591f5d30b2250e417a0e850caa6d18717b115dd59adf33fa0818665ed37.png" src="_images/5967f591f5d30b2250e417a0e850caa6d18717b115dd59adf33fa0818665ed37.png" />
+<img alt="_images/bdefbd93f9a13e65b7936789a1311b58d324162dc5989d7d5a71f3c13f20d899.png" src="_images/bdefbd93f9a13e65b7936789a1311b58d324162dc5989d7d5a71f3c13f20d899.png" />
 </div>
 </div>
 <p>From the figure above, it is apparent that the line of best fit we have calculated is the same as the one calculated by the scipy.stats.linregress function. We now understand what this function is doing!</p>
@@ -939,105 +939,105 @@ document.write(`
 <p>In our example above we simply stated what the equations used to determine our optimal value of the gradient and intercept were, but we proivded no explaination as to how these equations were derived. This will be explained in this section.</p>
 <p>Note: An understanding of partial differention is required to perform this derivation.</p>
 <p>Once again we are going to consider this idea of the residual, we defined this earlier as the difference between the line of best fit and any given data point. Written mathematically this may be expressed as:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-89e3c9ad-c1ae-4355-9275-8ff8a453d447">
-<span class="eqno">(4)<a class="headerlink" href="#equation-89e3c9ad-c1ae-4355-9275-8ff8a453d447" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-dcfc4421-68c9-4afc-b77f-ab2f03c9ed50">
+<span class="eqno">(4)<a class="headerlink" href="#equation-dcfc4421-68c9-4afc-b77f-ab2f03c9ed50" title="Permalink to this equation">#</a></span>\[\begin{equation}
 R = y_{data}-y_{model},
 \end{equation}\]</div>
 <p>which may also be expressed as:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-72f97094-caaa-4b2c-83b5-66f9139c68d7">
-<span class="eqno">(5)<a class="headerlink" href="#equation-72f97094-caaa-4b2c-83b5-66f9139c68d7" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-c81c03b2-ad3b-4b93-bc50-fda0843dcf4a">
+<span class="eqno">(5)<a class="headerlink" href="#equation-c81c03b2-ad3b-4b93-bc50-fda0843dcf4a" title="Permalink to this equation">#</a></span>\[\begin{equation}
 R = y_{data} - (m*x + c),
 \end{equation}\]</div>
 <p>where <span class="math notranslate nohighlight">\(m\)</span> and <span class="math notranslate nohighlight">\(c\)</span> are the gradient and intercept determined by our linear regression. Now we can consider the sum of the squared residuals:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-35d6935b-1a12-4042-b34e-f1cfaeb8ac92">
-<span class="eqno">(6)<a class="headerlink" href="#equation-35d6935b-1a12-4042-b34e-f1cfaeb8ac92" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-06bb401f-1459-4a4a-b26e-2145641c8deb">
+<span class="eqno">(6)<a class="headerlink" href="#equation-06bb401f-1459-4a4a-b26e-2145641c8deb" title="Permalink to this equation">#</a></span>\[\begin{equation}
 \sum{R^{2}}= \sum{[y_{data} - (mx + c)]^{2}}.
 \end{equation}\]</div>
 <p>In a simple linear regression, we want to minimise the value of the sum of the squared residuals. How do we do this? Another way to say this is we want to find the minimum of the function, which suggests that we need to do some differentiation! In this case we are going to take the partial derivatives of the function with respect to the terms we are trying to minimise <span class="math notranslate nohighlight">\(m\)</span> and <span class="math notranslate nohighlight">\(c\)</span>:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-60e942d5-47e0-4df8-8cae-da4a67c5e826">
-<span class="eqno">(7)<a class="headerlink" href="#equation-60e942d5-47e0-4df8-8cae-da4a67c5e826" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-4e7c4d75-79dc-49dd-8c13-2aed266f499b">
+<span class="eqno">(7)<a class="headerlink" href="#equation-4e7c4d75-79dc-49dd-8c13-2aed266f499b" title="Permalink to this equation">#</a></span>\[\begin{equation}
 \frac{\partial \sum R^{2}}{\partial m}= \sum \frac{\partial}{\partial m} \left([y_{data} - (mx + c)]^{2} \right)
 \end{equation}\]</div>
 <p>We can solve this partial differential by using the chain rule: We will bring down the power and then multiply by the partial differential of what is inside the brackets:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-64c8ece3-3d69-4170-ab4c-f900858ada51">
-<span class="eqno">(8)<a class="headerlink" href="#equation-64c8ece3-3d69-4170-ab4c-f900858ada51" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-9c6287cf-5e6b-4c4f-a7d1-4001d9646d2f">
+<span class="eqno">(8)<a class="headerlink" href="#equation-9c6287cf-5e6b-4c4f-a7d1-4001d9646d2f" title="Permalink to this equation">#</a></span>\[\begin{equation}
 \frac{\partial \sum R^{2}}{\partial m}= \sum{2 \cdot [y_{data} - (mx + c)]\cdot -x}
 \end{equation}\]</div>
 <p>Similarly, when taking the partial differential with respect to <span class="math notranslate nohighlight">\(c\)</span> we get:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-c98fe43b-4533-4bf7-9004-0c14f157e841">
-<span class="eqno">(9)<a class="headerlink" href="#equation-c98fe43b-4533-4bf7-9004-0c14f157e841" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-d8e5249d-d1bc-4524-9f5f-077545f65345">
+<span class="eqno">(9)<a class="headerlink" href="#equation-d8e5249d-d1bc-4524-9f5f-077545f65345" title="Permalink to this equation">#</a></span>\[\begin{equation}
 \frac{\partial \sum R^{2}}{\partial c}= \sum \frac{\partial}{\partial c} \left([y_{data} - (mx + c)]^{2} \right) = \sum{2\cdot [y_{data} - (mx + c)]\cdot -1}
 \end{equation}\]</div>
 <p>Next, as we want to find the values of <span class="math notranslate nohighlight">\(m\)</span> and <span class="math notranslate nohighlight">\(c\)</span> when the function is at a minimum, we set the partial differentials equal to zero:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-48bf0b5d-4905-4c0d-98f9-4df8974afcb7">
-<span class="eqno">(10)<a class="headerlink" href="#equation-48bf0b5d-4905-4c0d-98f9-4df8974afcb7" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-aacb804f-a6b2-4c0a-b158-d250711b810b">
+<span class="eqno">(10)<a class="headerlink" href="#equation-aacb804f-a6b2-4c0a-b158-d250711b810b" title="Permalink to this equation">#</a></span>\[\begin{equation}
 -2\sum{[y_{data} - (mx + c)]\cdot x} = 0,
 \end{equation}\]</div>
 <p>and</p>
-<div class="amsmath math notranslate nohighlight" id="equation-04000552-9e7d-480c-a495-5d82a911b139">
-<span class="eqno">(11)<a class="headerlink" href="#equation-04000552-9e7d-480c-a495-5d82a911b139" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-ace5f44b-6293-4d58-91e1-9e89bfaf880a">
+<span class="eqno">(11)<a class="headerlink" href="#equation-ace5f44b-6293-4d58-91e1-9e89bfaf880a" title="Permalink to this equation">#</a></span>\[\begin{equation}
 -2 \sum{[y_{data} - (mx + c)]} = 0.
 \end{equation}\]</div>
 <p>Finally, we solve these simeltanous equations to determine the values of <span class="math notranslate nohighlight">\(m\)</span> and <span class="math notranslate nohighlight">\(c\)</span>. Let’s begin by rewriting our equations so that they are easier to solve. The <span class="math notranslate nohighlight">\(-2\)</span> terms disappear when we set the equations equal to zero:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-57efd363-4c6e-468c-8f7f-fd2c1c69a976">
-<span class="eqno">(12)<a class="headerlink" href="#equation-57efd363-4c6e-468c-8f7f-fd2c1c69a976" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-47d15488-97b1-4ce5-b2b8-83fb67b00ed4">
+<span class="eqno">(12)<a class="headerlink" href="#equation-47d15488-97b1-4ce5-b2b8-83fb67b00ed4" title="Permalink to this equation">#</a></span>\[\begin{equation}
 \left(\sum{y_{data}} -\sum{mx} -\sum{c}\right)x = 0,
 \end{equation}\]</div>
 <p>and</p>
-<div class="amsmath math notranslate nohighlight" id="equation-8484bc6c-e1da-4586-9497-89cefcf855bb">
-<span class="eqno">(13)<a class="headerlink" href="#equation-8484bc6c-e1da-4586-9497-89cefcf855bb" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-113708f7-b8aa-4862-abde-023f6c55b616">
+<span class="eqno">(13)<a class="headerlink" href="#equation-113708f7-b8aa-4862-abde-023f6c55b616" title="Permalink to this equation">#</a></span>\[\begin{equation}
 \sum{y_{data}} -\sum{mx} -\sum{c} = 0.
 \end{equation}\]</div>
 <p>As <span class="math notranslate nohighlight">\(m\)</span> and <span class="math notranslate nohighlight">\(c\)</span> are constants, they may be taken out of the summations, such that:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-85f2f8ac-5b6f-4203-b949-044d54b85ad7">
-<span class="eqno">(14)<a class="headerlink" href="#equation-85f2f8ac-5b6f-4203-b949-044d54b85ad7" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-65b9ecab-2bf5-440c-9414-85bdb959bcc8">
+<span class="eqno">(14)<a class="headerlink" href="#equation-65b9ecab-2bf5-440c-9414-85bdb959bcc8" title="Permalink to this equation">#</a></span>\[\begin{equation}
 \left(\sum{y_{data}} -m\sum{x} -(n\cdot c)\right)x = 0,
 \end{equation}\]</div>
 <p>and</p>
-<div class="amsmath math notranslate nohighlight" id="equation-87f061fc-a53a-4489-b9e3-ee1d6641c062">
-<span class="eqno">(15)<a class="headerlink" href="#equation-87f061fc-a53a-4489-b9e3-ee1d6641c062" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-0abb7c65-4ae3-4bb1-9dfb-b5afaea040dc">
+<span class="eqno">(15)<a class="headerlink" href="#equation-0abb7c65-4ae3-4bb1-9dfb-b5afaea040dc" title="Permalink to this equation">#</a></span>\[\begin{equation}
 \sum{y_{data}} -m\sum{x} -(n\cdot c) = 0.
 \end{equation}\]</div>
 <p>Therefore, our equation for the intercept becomes:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-f6584eed-c85a-43f2-9be3-5ab57a284262">
-<span class="eqno">(16)<a class="headerlink" href="#equation-f6584eed-c85a-43f2-9be3-5ab57a284262" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-a050f7de-25c0-4958-8baa-d26528ae5693">
+<span class="eqno">(16)<a class="headerlink" href="#equation-a050f7de-25c0-4958-8baa-d26528ae5693" title="Permalink to this equation">#</a></span>\[\begin{equation}
 c = \frac{\sum{y_{data}}}{n} - \frac{m\sum{x}}{n}.
 \end{equation}\]</div>
 <p>which is equal to the equation we used in the previous section to determine our value of the intercept:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-b225dc7c-72f7-45d5-9f06-47f6badfc665">
-<span class="eqno">(17)<a class="headerlink" href="#equation-b225dc7c-72f7-45d5-9f06-47f6badfc665" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-dff737d3-b898-4c99-96ec-2809428c47f3">
+<span class="eqno">(17)<a class="headerlink" href="#equation-dff737d3-b898-4c99-96ec-2809428c47f3" title="Permalink to this equation">#</a></span>\[\begin{equation}
 c = \frac{\sum{y_{data}} - m\sum{x}}{n}.
 \end{equation}\]</div>
 <p>As the sum of the a set of values divided by the number of values is equal to the average value, the expression above can be expressed in terms of the mean values of y and x, <span class="math notranslate nohighlight">\(\bar{y}\)</span> and <span class="math notranslate nohighlight">\(\bar{x}\)</span>, respectively:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-78a7964a-7e04-4522-9e79-daae3993b370">
-<span class="eqno">(18)<a class="headerlink" href="#equation-78a7964a-7e04-4522-9e79-daae3993b370" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-9531e765-55ed-4442-a11a-aeb1a40d5187">
+<span class="eqno">(18)<a class="headerlink" href="#equation-9531e765-55ed-4442-a11a-aeb1a40d5187" title="Permalink to this equation">#</a></span>\[\begin{equation}
 c = \bar{y} - m \cdot \bar{x}.
 \end{equation}\]</div>
 <p>Using the expression for the intercept, we are able to determine a value for our gradient:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-ffaeefb9-ac66-4c1f-a361-21b197347716">
-<span class="eqno">(19)<a class="headerlink" href="#equation-ffaeefb9-ac66-4c1f-a361-21b197347716" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-fdd152e3-f95a-4355-a5b4-e2e24b10ffbf">
+<span class="eqno">(19)<a class="headerlink" href="#equation-fdd152e3-f95a-4355-a5b4-e2e24b10ffbf" title="Permalink to this equation">#</a></span>\[\begin{equation}
 \sum{[y_{data} - (mx + \bar{y} - m \cdot \bar{x})]\cdot x} = 0,
 \end{equation}\]</div>
-<div class="amsmath math notranslate nohighlight" id="equation-4539905c-3357-4248-b331-a921bef030a2">
-<span class="eqno">(20)<a class="headerlink" href="#equation-4539905c-3357-4248-b331-a921bef030a2" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-a5d52ff6-571e-424b-85b1-b89dcda36680">
+<span class="eqno">(20)<a class="headerlink" href="#equation-a5d52ff6-571e-424b-85b1-b89dcda36680" title="Permalink to this equation">#</a></span>\[\begin{equation}
 \sum{[y_{data} - \bar{y} - m(x - \bar{x})]\cdot x} = 0.
 \end{equation}\]</div>
 <p>We may then solve the equation for <span class="math notranslate nohighlight">\(m\)</span>:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-d9e71b0d-7844-410c-9169-02e1cfa779eb">
-<span class="eqno">(21)<a class="headerlink" href="#equation-d9e71b0d-7844-410c-9169-02e1cfa779eb" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-6e877c86-be9f-4ddc-bba9-bb4c8a8317bd">
+<span class="eqno">(21)<a class="headerlink" href="#equation-6e877c86-be9f-4ddc-bba9-bb4c8a8317bd" title="Permalink to this equation">#</a></span>\[\begin{equation}
 \sum{x(y_{data} - \bar{y})} - mx \sum{(x - \bar{x})} = 0,
 \end{equation}\]</div>
-<div class="amsmath math notranslate nohighlight" id="equation-85313937-a349-4265-a7de-1e8be3913e6d">
-<span class="eqno">(22)<a class="headerlink" href="#equation-85313937-a349-4265-a7de-1e8be3913e6d" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-da7ace26-47f3-4907-8d7a-504516433342">
+<span class="eqno">(22)<a class="headerlink" href="#equation-da7ace26-47f3-4907-8d7a-504516433342" title="Permalink to this equation">#</a></span>\[\begin{equation}
 \sum{x(y_{data} - \bar{y})} = mx \sum{(x - \bar{x})},
 \end{equation}\]</div>
-<div class="amsmath math notranslate nohighlight" id="equation-760cb64d-3440-432d-b456-234f977e8595">
-<span class="eqno">(23)<a class="headerlink" href="#equation-760cb64d-3440-432d-b456-234f977e8595" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-c62d4a2d-5b94-4a6c-8dfc-72d51b6e0294">
+<span class="eqno">(23)<a class="headerlink" href="#equation-c62d4a2d-5b94-4a6c-8dfc-72d51b6e0294" title="Permalink to this equation">#</a></span>\[\begin{equation}
 m=\frac{x\sum{(y_{data} - \bar{y})}} {x\sum{(x - \bar{x})}},
 \end{equation}\]</div>
 <p>which may be shown to be equal to the equation we used in the previous section to determine our value of the gradient:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-a8b2ad0b-5451-4479-93c0-213edda16391">
-<span class="eqno">(24)<a class="headerlink" href="#equation-a8b2ad0b-5451-4479-93c0-213edda16391" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-6e9733b9-5f0b-4058-8961-a335d292775b">
+<span class="eqno">(24)<a class="headerlink" href="#equation-6e9733b9-5f0b-4058-8961-a335d292775b" title="Permalink to this equation">#</a></span>\[\begin{equation}
  m = \frac{N\sum{x \cdot y} + \sum{x} \cdot\sum{y}}{N\sum{\left(x^2\right)} - \sum{\left(x\right)}^2}.
 \end{equation}\]</div>
 </div>

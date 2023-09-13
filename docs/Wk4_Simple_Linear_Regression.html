@@ -417,8 +417,8 @@ document.write(`
 <p>To quickly perform the same calculations we did last week in our manual regression, we can use the linregress function from the scipy.stats package in Python. The linregress function will not only return the intercept and gradient of the line of best fit for a given data set, but will also return the standard errors associated with the intercept and gradient and the Pearson’s correlation coefficient.</p>
 <p>The Pearson correlation coefficient, r, can take on any value between -1 and 1, and is a measure of the strength of the correlation between two variables. If the correlation coefficient is equal to -1, this is indicative of a strong negative correlation, whereas a correlation coefficient equal to 1 is indicative of a strong positive correlation. If there is no correlation the value will be equal to 0. A value between 0 and -1 or 0 and 1 indicates that there is a correlation, the strength of which is indicated by the magnitude of the value.</p>
 <p>You can calculate the Pearson correlation coefficient yourself using the following formula:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-e8972027-e600-41a0-8e45-ff72c05852aa">
-<span class="eqno">(25)<a class="headerlink" href="#equation-e8972027-e600-41a0-8e45-ff72c05852aa" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-f847893a-f60e-40f0-b9f4-b9fa64585d9f">
+<span class="eqno">(25)<a class="headerlink" href="#equation-f847893a-f60e-40f0-b9f4-b9fa64585d9f" title="Permalink to this equation">#</a></span>\[\begin{equation}
 r = \frac{\sum{(x_i - \bar{x})(y_i - \bar{y})}}{\sum{(x_i - \bar{x})^2} \cdot \sum{(y_i - \bar{y})^2}}
 \end{equation}\]</div>
 <p>where <span class="math notranslate nohighlight">\(x_i\)</span> is a given value of <span class="math notranslate nohighlight">\(x\)</span>, <span class="math notranslate nohighlight">\(\bar{x}\)</span> is the mean value of <span class="math notranslate nohighlight">\(x\)</span>, <span class="math notranslate nohighlight">\(y_i\)</span> is a given value of <span class="math notranslate nohighlight">\(y\)</span>, and <span class="math notranslate nohighlight">\(\bar{y}\)</span> is the mean value of <span class="math notranslate nohighlight">\(y\)</span>.</p>
@@ -463,11 +463,11 @@ r = \frac{\sum{(x_i - \bar{x})(y_i - \bar{y})}}{\sum{(x_i - \bar{x})^2} \cdot \s
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The gradient of the line of best fit is:  2.992  +\-  0.086 
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The gradient of the line of best fit is:  3.020  +\-  0.070 
 
-The intercept of the line of best fit is:  12.773  +\-  5.100 
+The intercept of the line of best fit is:  20.455  +\-  4.146 
 
-The Pearsons correlation coefficient is:  0.9962842522765056
+The Pearsons correlation coefficient is:  0.9975850029291644
 </pre></div>
 </div>
 </div>
@@ -475,7 +475,8 @@ The Pearsons correlation coefficient is:  0.9962842522765056
 <p>It only takes one line of code to fit a simple linear regression to our data! Once the gradient and intercept of the line of best fit have been determined, we can plot our line of best fit using <span class="math notranslate nohighlight">\(y= mx +c\)</span>:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="k">matplotlib</span> inline
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
 
 <span class="c1"># Plot the line of best fit using our xData and calculated gradient and intercept:</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">xData</span><span class="p">,</span> <span class="n">yData</span><span class="p">,</span> <span class="n">marker</span> <span class="o">=</span> <span class="s1">&#39;o&#39;</span><span class="p">,</span> <span class="n">linestyle</span> <span class="o">=</span> <span class="s1">&#39; &#39;</span><span class="p">,</span> <span class="n">color</span> <span class="o">=</span> <span class="s1">&#39;k&#39;</span><span class="p">,</span> <span class="n">label</span> <span class="o">=</span> <span class="s1">&#39;Data&#39;</span><span class="p">)</span>
@@ -486,9 +487,7 @@ The Pearsons correlation coefficient is:  0.9962842522765056
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Figure size 640x480 with 1 Axes&gt;
-</pre></div>
-</div>
+<img alt="_images/8079e7f2b161bd48410683edbdeed555d78dc1696ff4726e4819c8a571ba1c6b.png" src="_images/8079e7f2b161bd48410683edbdeed555d78dc1696ff4726e4819c8a571ba1c6b.png" />
 </div>
 </div>
 </div>
@@ -504,9 +503,7 @@ The Pearsons correlation coefficient is:  0.9962842522765056
 <li><p>Once you have opened the blank workbook, you should see the following:</p></li>
 </ol>
 <p><img alt="image" src="_images/OriginPro2.png" /></p>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>The rows and columns of cells are where we will enter our x and y data. If we had multiple values of y for any given value of x, we could add additional columns to the book. You should enter the names and units of the x/y variables in the appropriate cells.
-</pre></div>
-</div>
+<p>The rows and columns of cells are where we will enter our x and y data. If we had multiple values of y for any given value of x, we could add additional columns to the book. You should enter the names and units of the x/y variables in the appropriate cells.</p>
 <ol class="arabic" start="3">
 <li><p>Next, we will fill the cells with our x and y values. We could do this manually, however it is often more convenient to simply import the data from an appropriate file type e.g. a csv file.</p>
 <p>To import data, from the toolbar select “Data” &gt;&gt; “Import from file” &gt;&gt; “CSV”, and then browse your local computer to find the appropriate CSV file. OriginPro will then read the CSV file and fill the empty cells.</p>
