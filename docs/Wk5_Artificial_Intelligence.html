@@ -153,7 +153,7 @@ const thebe_selector_output = ".output, .cell_output"
         <ul class="nav bd-sidenav bd-sidenav__home-link">
             <li class="toctree-l1">
                 <a class="reference internal" href="intro.html">
-                    Welcome to PHYS11006 Computing Skills
+                    Welcome to PHY11006 Computing Skills
                 </a>
             </li>
         </ul>
@@ -445,9 +445,9 @@ document.write(`
 </div>
 </div>
 <p>If we run this code, we are greeted with an error message. Let’s pretend that we cannot identify the mistake ourselves… One way I can use chatGPT to debug this code is to ask it to explain the error to me:</p>
-<p><img alt="image" src="_images/ChatGPT1.png" /></p>
+<p><img alt="image, alt = &quot;A screenshot of the output from chat GPT. The text it provides reads: The error message you received is a &quot;NameError&quot; indicating that a name (in this case, 'x') is not defined in your Python code. The error is specifically occurring in the file &quot;ChatGPT_plotting.py&quot; at line 6. In the given line of code, you are trying to use the variable '×' to calculate the 'Data' variable. However, Python is unable to find a definition or assignment of the variable '*' before it is used in that line. As a result, it raises the NameError to inform you that 'x' is not recognized. To resolve this error, you need to define or assign a value to the variable 'x' before it is used in line 6. For example, you can add a line before line 6 to assign a value to 'x' or import it from another module if necessary. Here's an example of assigning a value to 'x' before using it. It then outputs corrected code, and continues to read: In the above code snippet, 'x' is assigned a value of 10 before it is used in the calculation of 'Data'. Modify the value assigned to 'x' according to your requirements.&quot;" src="_images/ChatGPT1.png" /></p>
 <p>This method is useful as ChatGPT will explain to us what the mistake is and how we can fix it. Unfortunately, our script contains many mistakes and identifying them this way may be time consuming - instead let’s provide ChatGPT with our script and ask it to identify and correct any mistakes:</p>
-<p><img alt="image" src="_images/ChatGPT2.png" /></p>
+<p><img alt="image, alt = &quot;A screenshot of the output from chat GPT. The text it provides reads: Here is your corrected python script (python script with corrections shown). Here are the changes made to your code: 1. In line 5, '105' is replaced with 100 ' in order to match the length of xata 2. In line 7, 'x is replaced with ×Data to be consistent with the variable name used for the x-axis data. 3. In line 9, 'pit.pit' is corrected to 'plt.plot 4. In line 10, &quot; &quot;Data'* is replaced with k to specify the color for the scatter plot. 5. In line 11, - 'BestFitLine' is replaced with &quot; * red ' - to specify the color for the line plot. Now the script should run without any errors and produce a scatter plot of the data points (Data&quot; and yData) with a line representing the best fit (&quot;BestFitline).&quot;" src="_images/ChatGPT2.png" /></p>
 <p><strong>It is now our responsibility to read through the script generated and ensure that the mistakes identified and corrections made are appropriate!</strong> You may notice that some of the explanations it provided as to why it changed our code don’t make too much sense… Also take note of the errors that we initially made - did you spot them all?</p>
 <p>The two methods above can be used in conjunction with one another - sometimes it may be useful to have in depth explanations provided for specific issues to aid our understanding, whereas in other instances it is useful to simply have an expert debugger on hand.</p>
 </div>
@@ -582,7 +582,7 @@ document.write(`
 <li><p>Finally, review the content you have covered in your lectures thus far and use AI to help you visualise another concept of your choice.</p></li>
 </ol>
 <p>This activity builds upon the concepts we have already covered (functions, plotting, etc.), but we will now use AI to help us further by incorporating animation.  The gif I produced is shown below (I have never animated using Python before either!).</p>
-<p><img alt="image" src="_images/Superposition_of_travelling_waves.gif" /></p>
+<p><img alt="image, alt = &quot;A GIF showing a dynamic plot of two travelling waves and thier resulting superposition.&quot;" src="_images/Superposition_of_travelling_waves.gif" /></p>
 </div>
 </div>
 </div>

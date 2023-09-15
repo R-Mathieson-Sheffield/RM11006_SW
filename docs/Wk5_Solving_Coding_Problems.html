@@ -153,7 +153,7 @@ const thebe_selector_output = ".output, .cell_output"
         <ul class="nav bd-sidenav bd-sidenav__home-link">
             <li class="toctree-l1">
                 <a class="reference internal" href="intro.html">
-                    Welcome to PHYS11006 Computing Skills
+                    Welcome to PHY11006 Computing Skills
                 </a>
             </li>
         </ul>
@@ -483,19 +483,19 @@ document.write(`
 <h2>Python Documentation<a class="headerlink" href="#python-documentation" title="Permalink to this heading">#</a></h2>
 <p>Many times the error we encounter will be related to the arguments required for an imported function or package - to debug these errors we may need to consult appropriate documentation.</p>
 <p>When you first encounter this type of material it can appear somewhat inaccessible and intimidating, but let’s inspect the typical anatomy of Python documentation so that we may feel more comfortable using it to solve our coding problems. Let’s take a look at the <a class="reference external" href="https://docs.scipy.org/doc/scipy/reference/generated/scipy.stats.linregress.html">scipy.stats.linregress documentation</a>:</p>
-<p><img alt="image" src="_images/Documentation1.png" /></p>
+<p><img alt="image, alt = &quot;A screenshot of the scipy.stats.linregress documentation.&quot;" src="_images/Documentation1.png" /></p>
 <p>At the very top of the page we can see the package that the linregress function comes from - scipy.stats.</p>
 <p>Following this we see an example of how one would type the function into their code and the arguments that they would need to include, for example, we are told that the x and y parameters are required and that these each need to be array_like (i.e. we need a list of x and y data points). You may note that the documentation outlines that we may set “y=None” if our x array is 2 dimensional.</p>
 <p>In this example there is the “alternative” argument, which by default is set as “two-sided” but can be changed to “less” or “greater” if we want to ensure that the gradient of the line is less than or greater than zero, respectfully.</p>
 <p>This is all of the information we need for us to be able to use the linregress function.</p>
-<p><img alt="image" src="_images/Documentation2.png" /></p>
+<p><img alt="image, alt = &quot;A screenshot of the scipy.stats.linregress documentation.&quot;" src="_images/Documentation2.png" /></p>
 <p>Following the parameters are the returns (see above) - these being all of the parameters that we can extract from the linregress function once it has successfully fit our data. From the documentation we can see that our “result” is an object with several attributes: the slope, intercept, rvalue, pvalue, stderr, and inctercept_stderr, and that each of these values are float types. Each attribute is accompanied by a description of what it is for user ease.</p>
 <p>As an added bonus, the documentation also references similar functions that may be of use to us - this can be particularly useful when we are trying to do something specific, but do not know if a function exists/the name of a function needed.</p>
 <p>Next, the documentation outlines any specific notes to be aware of - in this case the different ways in which we can extract our fit information, note only one method allows us to determine the intercept standard error…</p>
-<p><img alt="image" src="_images/Documentation3.png" /></p>
+<p><img alt="image, alt = &quot;A screenshot of the scipy.stats.linregress documentation.&quot;" src="_images/Documentation3.png" /></p>
 <p>Finally, and perhaps most usefully, at the end of the documentation we are typically given examples of how to use the code that we are reading about. This may be accompanied by  an example output of the code.</p>
-<p><img alt="image" src="_images/Documentation4.png" />
-<img alt="image" src="_images/Documentation5.png" /></p>
+<p><img alt="image, alt = &quot;A screenshot of the scipy.stats.linregress documentation.&quot;" src="_images/Documentation4.png" />
+<img alt="image, alt = &quot;A screenshot of the scipy.stats.linregress documentation.&quot;" src="_images/Documentation5.png" /></p>
 <p>… and that’s all there is to it!</p>
 <p>Documentation simply tells us what goes in and what comes out and to clarify anything we may be unsure of. If further information is required that the documentation does not outline, appropriate links will usually be provided for us to follow.</p>
 <p>It may take a few reads to understand documentation, but this is usually worth our time nonetheless.</p>
@@ -607,7 +607,7 @@ document.write(`
 <h3>Superposition of Standing Waves<a class="headerlink" href="#superposition-of-standing-waves" title="Permalink to this heading">#</a></h3>
 <p>In this exercise, I would like you to become familiar using online sources of information for yourself. To do this you will write a piece of code that help visualise the principle of superposition of waves.</p>
 <p>A function is defined that outputs the amplitude of a standing wave of known wavelength for a given value of displacement along in the x-direction. Your task is to write the rest of the code required to produce the following plot:</p>
-<p><img alt="image" src="_images/Superposition.png" /></p>
+<p><img alt="image, alt = &quot;An image of the plot to be made. This plot shows two waves and their superposition all on the same set of axes. The plot has a title, a legend at the top (centred) of the plot with all three labels shown on the same line. One of the waves is shown as an orange line, one is shown as a blue line, and the superposition is shown as a green line. All of the waves oscillated between positive and negative as a function of the distance (x). The axes have labels with units. There is a horizontal black line spanning the plot at y=0. The area beneath the waves is filled in the same colour as the corresponding wave, but the fill is partially transparent.&quot;" src="_images/Superposition.png" /></p>
 <p><strong>Task</strong></p>
 <p>Using the function defined, recreate the plot shown in the figure above (wave 1: wavelength = 5 m &amp; amplitude = 5, wave 2: wavelength = 1 m, amplitude = 2.5). Note that this plot has some features that we have not covered in the course notes and you will need to find information online to recreate it.</p>
 <p>The key things you will need to figure out how to do are:</p>

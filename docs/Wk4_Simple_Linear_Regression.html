@@ -153,7 +153,7 @@ const thebe_selector_output = ".output, .cell_output"
         <ul class="nav bd-sidenav bd-sidenav__home-link">
             <li class="toctree-l1">
                 <a class="reference internal" href="intro.html">
-                    Welcome to PHYS11006 Computing Skills
+                    Welcome to PHY11006 Computing Skills
                 </a>
             </li>
         </ul>
@@ -417,12 +417,12 @@ document.write(`
 <p>To quickly perform the same calculations we did last week in our manual regression, we can use the linregress function from the scipy.stats package in Python. The linregress function will not only return the intercept and gradient of the line of best fit for a given data set, but will also return the standard errors associated with the intercept and gradient and the Pearson’s correlation coefficient.</p>
 <p>The Pearson correlation coefficient, r, can take on any value between -1 and 1, and is a measure of the strength of the correlation between two variables. If the correlation coefficient is equal to -1, this is indicative of a strong negative correlation, whereas a correlation coefficient equal to 1 is indicative of a strong positive correlation. If there is no correlation the value will be equal to 0. A value between 0 and -1 or 0 and 1 indicates that there is a correlation, the strength of which is indicated by the magnitude of the value.</p>
 <p>You can calculate the Pearson correlation coefficient yourself using the following formula:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-31534b5b-602d-4876-b54d-fd1a87aa0b95">
-<span class="eqno">(25)<a class="headerlink" href="#equation-31534b5b-602d-4876-b54d-fd1a87aa0b95" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-5281be55-30c4-4679-80e2-613a9bdfa72a">
+<span class="eqno">(25)<a class="headerlink" href="#equation-5281be55-30c4-4679-80e2-613a9bdfa72a" title="Permalink to this equation">#</a></span>\[\begin{equation}
 r = \frac{\sum{(x_i - \bar{x})(y_i - \bar{y})}}{\sum{(x_i - \bar{x})^2} \cdot \sum{(y_i - \bar{y})^2}}
 \end{equation}\]</div>
 <p>where <span class="math notranslate nohighlight">\(x_i\)</span> is a given value of <span class="math notranslate nohighlight">\(x\)</span>, <span class="math notranslate nohighlight">\(\bar{x}\)</span> is the mean value of <span class="math notranslate nohighlight">\(x\)</span>, <span class="math notranslate nohighlight">\(y_i\)</span> is a given value of <span class="math notranslate nohighlight">\(y\)</span>, and <span class="math notranslate nohighlight">\(\bar{y}\)</span> is the mean value of <span class="math notranslate nohighlight">\(y\)</span>.</p>
-<p><img alt="image" src="_images/Correlation_Coefficient.png" /></p>
+<p><img alt="image, alt = &quot;A series of plots used to illustrate what can be inferred from the Pearson correlation coefficient. The upper-left plot shows data which follows a strong linear trend, the lower-left plot shows data that follows a strong negative linear trend, the upper-right plot shows data which follows a weaker positive linear trend and the lower-right plot shows data which follows a very weak negative linear trend.&quot;" src="_images/Correlation_Coefficient.png" /></p>
 <p>The plot above shows 4 different data sets. The upper-left data set has a correlation coefficient of 0.9997 and the lower-left data set has a correlation coefficient of -0.9996. This is expected as they clearly show strong positive and negative correlations, respectively. The upper-right data set has a correlation coefficient of 0.9375, which indicates that there is a positive correlation, but one that is not as strong as that shown in the upper-left plot. Finally, the lower-right plot has a correlation coefficient of -0.0554, which is indicative of a very weak negative correlation.</p>
 <p>If we square the Pearson correlation coefficient, we obtain the Coefficient of Determination, R2, often called the R-squared value. R2 may take on a value between 0 and 1 and is a measure of how well the model used to describe a data set is at predicting an outcome. An R2 value equal to 1 means that the model is able to perfectly predict any given value of y from any given value of x, whereas an R2 value equal to 0 means that the model cannot predict an outcome. Naturally, a value closer to 1 is better.</p>
 <p>Now that we understand what the correlation coefficient tells us, let’s do some fitting!</p>
@@ -463,11 +463,11 @@ r = \frac{\sum{(x_i - \bar{x})(y_i - \bar{y})}}{\sum{(x_i - \bar{x})^2} \cdot \s
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The gradient of the line of best fit is:  2.819  +\-  0.070 
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The gradient of the line of best fit is:  2.933  +\-  0.082 
 
-The intercept of the line of best fit is:  18.955  +\-  4.140 
+The intercept of the line of best fit is:  15.909  +\-  4.856 
 
-The Pearsons correlation coefficient is:  0.9972380919585387
+The Pearsons correlation coefficient is:  0.9964938094225303
 </pre></div>
 </div>
 </div>
@@ -487,7 +487,7 @@ The Pearsons correlation coefficient is:  0.9972380919585387
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/c46eb5d9d893e1aaed24096de1162c89128126d8c763d182403a2fca8da30873.png" src="_images/c46eb5d9d893e1aaed24096de1162c89128126d8c763d182403a2fca8da30873.png" />
+<img alt="_images/bd24ac54161bcec1d48a88117e4a148a5acaa3aa701bc457a57b324a3853a899.png" src="_images/bd24ac54161bcec1d48a88117e4a148a5acaa3aa701bc457a57b324a3853a899.png" />
 </div>
 </div>
 </div>
@@ -498,28 +498,28 @@ The Pearsons correlation coefficient is:  0.9972380919585387
 <p>A second point to note is that OriginPro cannot natively be run on MacOS and instead requires the user to setup and use a “virtual machine” or partition their hard-drive and install windows onto their mac. I do not recommend you use either of these options. This simply highlights why so many scientists use Python - it is open source and universal.</p>
 <ol class="arabic">
 <li><p>To begin using OriginPro on a university computer, search for OriginPro in the Windows search bar and open OriginPro 2019 (64 Bit). You will be greeted with a range of options of the workbook you wish to use - select “Blank Workbook”:</p>
-<p><img alt="image" src="_images/OriginPro1.png" /></p>
+<p><img alt="image, alt = &quot;An image of the different workbook options avaliable to use in OriginPro.&quot;" src="_images/OriginPro1.png" /></p>
 </li>
 <li><p>Once you have opened the blank workbook, you should see the following:</p></li>
 </ol>
-<p><img alt="image" src="_images/OriginPro2.png" /></p>
+<p><img alt="image, alt = &quot;An image of a blank OriginPro workbook.&quot;" src="_images/OriginPro2.png" /></p>
 <p>The rows and columns of cells are where we will enter our x and y data. If we had multiple values of y for any given value of x, we could add additional columns to the book. You should enter the names and units of the x/y variables in the appropriate cells.</p>
 <ol class="arabic" start="3">
 <li><p>Next, we will fill the cells with our x and y values. We could do this manually, however it is often more convenient to simply import the data from an appropriate file type e.g. a csv file.</p>
 <p>To import data, from the toolbar select “Data” &gt;&gt; “Import from file” &gt;&gt; “CSV”, and then browse your local computer to find the appropriate CSV file. OriginPro will then read the CSV file and fill the empty cells.</p>
 </li>
 </ol>
-<p><img alt="image" src="_images/OriginPro3.png" /></p>
+<p><img alt="image, alt = &quot;An image illustrating how to import data into OriginPro by browsing through local files.&quot; " src="_images/OriginPro3.png" /></p>
 <ol class="arabic" start="4">
 <li><p>Once our data has been imported, we can perform analysis using it. To perform a simple linear regression simply highlight the data in book 1 and in the toolbar select “Analysis” &gt;&gt; “Fitting” &gt;&gt; “Linear Fit”.</p>
 <p>The default options provided as you navigate the fitting options should be appropriate, however you are free to edit the default selection if needed.</p>
 </li>
 </ol>
-<p><img alt="image" src="_images/OriginPro4.png" /></p>
+<p><img alt="image, alt = &quot;An image illustrating how to perform a linear fit on the data imported into OriginPro.&quot;" src="_images/OriginPro4.png" /></p>
 <ol class="arabic simple" start="5">
 <li><p>Finally, we can perform our fit and see our results. All of the fitting results are provided in the “Parameters” and “Statistics” tables. You can better visualise and edit the plot produced by clicking on the plot preview.</p></li>
 </ol>
-<p><img alt="image" src="_images/OriginPro5.png" /></p>
+<p><img alt="image, alt = &quot;An image of the fit results and plot produced by OriginPro from the linear fit.&quot;" src="_images/OriginPro5.png" /></p>
 <ol class="arabic simple" start="6">
 <li><p>The information from OriginPro may then be used to produce a high quality plot. For the exercises below, I would suggest that you play around with the style options in OriginPro, but use the information it outputs to make a high quality plot using Python.</p></li>
 </ol>
