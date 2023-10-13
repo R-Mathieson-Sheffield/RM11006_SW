@@ -185,6 +185,10 @@ const thebe_selector_output = ".output, .cell_output"
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="Wk6_Computing_Skills_Assessment.html">Computing Skills Assessment</a></li>
 </ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Appendix</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="Useful_Functions.html">Useful Functions</a></li>
+</ul>
 
     </div>
 </nav></div>
@@ -417,8 +421,8 @@ document.write(`
 <p>To quickly perform the same calculations we did last week in our manual regression, we can use the linregress function from the scipy.stats package in Python. The linregress function will not only return the intercept and gradient of the line of best fit for a given data set, but will also return the standard errors associated with the intercept and gradient and the Pearson’s correlation coefficient.</p>
 <p>The Pearson correlation coefficient, r, can take on any value between -1 and 1, and is a measure of the strength of the correlation between two variables. If the correlation coefficient is equal to -1, this is indicative of a strong negative correlation, whereas a correlation coefficient equal to 1 is indicative of a strong positive correlation. If there is no correlation the value will be equal to 0. A value between 0 and -1 or 0 and 1 indicates that there is a correlation, the strength of which is indicated by the magnitude of the value.</p>
 <p>You can calculate the Pearson correlation coefficient yourself using the following formula:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-5281be55-30c4-4679-80e2-613a9bdfa72a">
-<span class="eqno">(25)<a class="headerlink" href="#equation-5281be55-30c4-4679-80e2-613a9bdfa72a" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-955bd801-1372-4556-9a8e-3dcc19b5014a">
+<span class="eqno">(25)<a class="headerlink" href="#equation-955bd801-1372-4556-9a8e-3dcc19b5014a" title="Permalink to this equation">#</a></span>\[\begin{equation}
 r = \frac{\sum{(x_i - \bar{x})(y_i - \bar{y})}}{\sum{(x_i - \bar{x})^2} \cdot \sum{(y_i - \bar{y})^2}}
 \end{equation}\]</div>
 <p>where <span class="math notranslate nohighlight">\(x_i\)</span> is a given value of <span class="math notranslate nohighlight">\(x\)</span>, <span class="math notranslate nohighlight">\(\bar{x}\)</span> is the mean value of <span class="math notranslate nohighlight">\(x\)</span>, <span class="math notranslate nohighlight">\(y_i\)</span> is a given value of <span class="math notranslate nohighlight">\(y\)</span>, and <span class="math notranslate nohighlight">\(\bar{y}\)</span> is the mean value of <span class="math notranslate nohighlight">\(y\)</span>.</p>
@@ -463,11 +467,11 @@ r = \frac{\sum{(x_i - \bar{x})(y_i - \bar{y})}}{\sum{(x_i - \bar{x})^2} \cdot \s
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The gradient of the line of best fit is:  2.933  +\-  0.082 
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The gradient of the line of best fit is:  3.057  +\-  0.098 
 
-The intercept of the line of best fit is:  15.909  +\-  4.856 
+The intercept of the line of best fit is:  8.864  +\-  5.783 
 
-The Pearsons correlation coefficient is:  0.9964938094225303
+The Pearsons correlation coefficient is:  0.9954305774097943
 </pre></div>
 </div>
 </div>
@@ -487,7 +491,7 @@ The Pearsons correlation coefficient is:  0.9964938094225303
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/bd24ac54161bcec1d48a88117e4a148a5acaa3aa701bc457a57b324a3853a899.png" src="_images/bd24ac54161bcec1d48a88117e4a148a5acaa3aa701bc457a57b324a3853a899.png" />
+<img alt="_images/9e330c7b896f61e2ae0434621003312c6d99b409385fe42a483296feaaff4dff.png" src="_images/9e330c7b896f61e2ae0434621003312c6d99b409385fe42a483296feaaff4dff.png" />
 </div>
 </div>
 </div>
